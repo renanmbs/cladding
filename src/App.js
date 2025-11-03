@@ -49,15 +49,20 @@ function App() {
   }, []);
 
   // Scroll-to-top handler
-  const handleBackToMenu = useCallback(() => {
-    // USE NATIVE SCROLL: Scroll to the menuRef element
-    if (menuRef.current) {
-      menuRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }, []);
+const handleBackToMenu = useCallback(() => {
+  if (menuRef.current) {
+    menuRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  // Delay the reset to let scroll finish smoothly
+  setTimeout(() => {
+    setSectionsRendered(false);
+    setLastClickedSection(null);
+  }, 600); // 0.6s matches the scroll animation speed
+}, []);
 
   return (
     <div className="App">

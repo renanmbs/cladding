@@ -1,22 +1,80 @@
-import React from 'react';
-import "../panel/panels.css"; // Optional CSS module for styling
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "./panels.css";
+import { panelData } from "./panels_choices";
 
 export default function Panels() {
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % panelData.length);
+  const prevSlide = () =>
+    setCurrent((prev) => (prev - 1 + panelData.length) % panelData.length);
+
+  // Auto-slide (optional)
+  useEffect(() => {
+    const timer = setInterval(() => nextSlide(), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const { title, description, image, link } = panelData[current];
+
   return (
     <div className="section panels-section">
-      <h2>What Panels Are You Using?</h2>
-      <div className="panel-card">
-        <div className="panel-info">
-          <h3>HPL / PHENOLIC</h3>
-          <p>
-            Panels consisting of a core made with resin and high-density thermosetting cellulose fibers. 
-            Over this compact core, different materials of various finishes are used.
-          </p>
-          {/* <a href="#">See Products for This Panel</a> */}
+      <div className="divider-container">
+        <div className="line"></div>
+        <div className="text">
+          <h3>WHAT PANELS ARE YOU USING?</h3>
         </div>
+        <div className="line"></div>
       </div>
-      {/* Optionally add a carousel/slider dots */}
-      <div className="carousel-dots">● ○ ○</div>
+
+      <div className="panel-card-wrapper">
+        <button
+          className="nav-arrow left"
+          onClick={prevSlide}
+          aria-label="Previous Panel"
+        >
+          ◀
+        </button>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            className="panel-card"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -60 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="panel-info">
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href={link}>SEE PRODUCTS FOR THIS PANEL →</a>
+            </div>
+            <div className="panel-image">
+              <img src={image} alt={title} draggable="false" />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <button
+          className="nav-arrow right"
+          onClick={nextSlide}
+          aria-label="Next Panel"
+        >
+          ▶
+        </button>
+      </div>
+
+      <div className="carousel-dots">
+        {panelData.map((_, i) => (
+          <span
+            key={i}
+            className={`dot ${i === current ? "active" : ""}`}
+            onClick={() => setCurrent(i)}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,13 @@
+/* Palette
+
+Bright Red: #c31d2a 
+Dark Red: #612d31
+Black: #000000
+Grey: #323b41
+Blueish: #7a8ea0
+Light Grey: #cccccc
+white: #ffffff */
+
 .section {
   width: 80%;
   height: 100vh;
@@ -6,19 +16,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-image: url("../image//Landing\ Page\ background\ red.png"); 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: solid white; */
 }
 
-h2 {
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-
-.panel-card, .fastener-card {
+.fastener-card {
   background: #fff;
   color: #003366;
   border-radius: 1rem;
@@ -29,7 +29,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.panel-card img, .fastener-card img {
+.fastener-card img {
   width: 200px;
   height: 150px;
   object-fit: cover;
@@ -37,35 +37,42 @@ h2 {
   margin-right: 2rem;
 }
 
-.panel-info, .fastener-info {
+.fastener-info {
   display: flex;
   flex-direction: column;
-}
-
-.cladding-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cladding-card {
-  background: #fff;
-  color: #003366;
-  border-radius: 1rem;
-  padding: 1rem;
-  width: 250px;
-  text-align: center;
-}
-
-.cladding-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 1rem;
 }
 
 .carousel-dots {
   margin-top: 1rem;
   opacity: 0.7;
+}
+
+.divider-container {
+  display: flex;
+  align-items: center; 
+  width: 80%;
+  /* CHANGE: Use clamp() for fluid, constrained margin */
+  /* Syntax: clamp(MINIMUM_SIZE, PREFERRED_FLUID_SIZE, MAXIMUM_SIZE) */
+  /* margin-top: clamp( 0.1rem, 0vw, 0.5rem); 
+  margin-bottom: clamp(0.5rem, 1vw, 1.5rem); */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.line {
+  flex-grow: 1;
+  height: 3px;
+  background: linear-gradient(to right, #c31d2a, 10%, #cccccc);
+}
+
+.divider-container .line:last-child {
+  background: linear-gradient(to left, #c31d2a, 10%, #cccccc);
+}
+
+.text {
+  padding: 0 1rem;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.3rem;
+  white-space: nowrap;
 }
