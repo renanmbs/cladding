@@ -1,73 +1,17 @@
-/* .section {
-  min-height: 100vh;
+.section {
+  width: 80%;
+  height: 100vh;
   padding: 3rem;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../image//Landing\ Page\ background\ red.png"); 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
 }
 
 h2 {
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
-
-.panel-card, .fastener-card {
-  background: #fff;
-  color: #003366;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 800px;
-  margin-bottom: 2rem;
-}
-
-.panel-card img, .fastener-card img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-}
-
-.panel-info, .fastener-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.cladding-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cladding-card {
-  background: #fff;
-  color: #003366;
-  border-radius: 1rem;
-  padding: 1rem;
-  width: 250px;
-  text-align: center;
-}
-
-.cladding-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.carousel-dots {
-  margin-top: 1rem;
-  opacity: 0.7;
-} 
   
 .cladding-cards {
   display: flex;
@@ -78,17 +22,30 @@ h2 {
 
 .cladding-card {
   background: #fff;
-  color: #003366;
+  color: #323b41;
   border-radius: 1rem;
   padding: 1rem;
-  width: 20rem;
+  height: 35rem;
+  width: 30rem;
   text-align: center;
+  margin-top: 5rem;
 }
 
 .cladding-card img {
   width: 100%;
-  height: 10rem;
-  object-fit: cover;
+  height: 20rem;
+  object-fit: contain; /*Or fill*/
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
-  */
+
+.cladding-card h3{
+  color: #c31d2a;
+  font-size: 1.5rem;
+}
+
+.cladding-card p{
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}

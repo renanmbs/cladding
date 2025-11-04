@@ -75,4 +75,5 @@ white: #ffffff */
   font-family: sans-serif;
   font-size: 1.3rem;
   white-space: nowrap;
+  text-transform: uppercase;
 }

@@ -77,7 +77,7 @@ body {
 }
 
 .App nav ul li:hover {
-  color: var(--primary-red);
+  color: #c31d2a;
 }
 
 .App nav ul li:hover::after {
