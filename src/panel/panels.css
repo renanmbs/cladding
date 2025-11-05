@@ -1,7 +1,7 @@
 /* --- Wrapper --- */
 .panel-card-wrapper {
   position: relative;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -41,7 +41,8 @@
 /* --- Panel card --- */
 .panel-card {
   display: flex;
-  align-items: flex-start; /* align tops */
+  align-items: flex-start;
+  /* align tops */
   justify-content: space-between;
   width: 100%;
   height: 30rem;
@@ -63,7 +64,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* ensure h3 starts at top */
+  justify-content: flex-start;
+  /* ensure h3 starts at top */
 }
 
 .panel-info h3 {
@@ -82,7 +84,8 @@
 
 .panel-info a {
   position: relative;
-  display: inline; /* makes the underline match text width exactly */
+  display: inline;
+  /* makes the underline match text width exactly */
   text-decoration: none;
   color: #000;
   font-weight: 600;
@@ -96,16 +99,31 @@
   color: #7a8ea0;
 }
 
+.panel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.015);
+  /* subtle neutral bg before image loads */
+  border-radius: 1rem;
+}
+
 .panel-image img {
   width: 30rem;
   height: 30rem;
   object-fit: contain !important;
   user-select: none;
   pointer-events: none;
-  border-radius: 1rem;
   display: block;
   margin-top: 0;
-  border: solid #c31d2a;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.05));
+  will-change: opacity;
+}
+
+.panel-image img.loaded {
+  opacity: 1;
 }
 
 /* --- Dots --- */
@@ -129,6 +147,7 @@
   background: #c31d2a;
   transform: scale(1.2);
 }
+
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

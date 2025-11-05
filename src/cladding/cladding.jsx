@@ -3,7 +3,7 @@ import '../cladding/cladding.css'; // Optional CSS module for styling
 
 export default function Cladding() {
   return (
-    <div className="section cladding-section">
+    <div className="section2 cladding-section">
 
       <div className="divider-container">
         <div className="line"></div>
@@ -16,7 +16,7 @@ export default function Cladding() {
       <div className="cladding-cards">
 
         <div className="cladding-card">
-          <img src="/Cladding/Cladding Page Clip and Rail System thumbnail 2.png" alt="Clip & Rail Systems" />
+          <img src="/Cladding/Cladding Page Clip and Rail System thumbnail 2.png" alt="Clip & Rail Systems" className='img2'/>
           <h3>CLIP & RAIL SYSTEMS</h3>
           <p>
             Our cladding clip and rail systems are perfect for concealed anchor installations and are compatible with any panel material you desire.
@@ -24,7 +24,7 @@ export default function Cladding() {
         </div>
 
         <div className="cladding-card">
-          <img src="/Cladding/Substructures Thumbnail.png" alt="Substructures" />
+          <img src="/Cladding/Substructures Thumbnail.png" alt="Substructures" className='img2'/>
           <h3>SUBSTRUCTURES</h3>
           <p>
             Our cladding support components can be used behind almost any cladding system. The 1" projection can far out the wall for admired and ventilated cavity behind moisture sensitive.
