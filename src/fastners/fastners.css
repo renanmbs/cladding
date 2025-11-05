@@ -1,30 +1,191 @@
-/* Palette
-
-Bright Red: #c31d2a 
-Dark Red: #612d31
-Black: #000000
-Grey: #323b41
-Blueish: #7a8ea0
-Light Grey: #cccccc
-white: #ffffff */
-
-.carousel-dots {
-  margin-top: 1rem;
-  opacity: 0.7;
+/* --- Wrapper --- */
+.panel-card-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
+/* --- Navigation Arrows --- */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease, opacity 0.25s ease;
+  z-index: 2;
+  padding: 0.25rem;
+}
+
+.nav-arrow:hover {
+  opacity: 0.7;
+  transform: translateY(-50%) scale(1.15);
+  color: #c31d2a;
+}
+
+.nav-arrow.left {
+  left: -2.5rem;
+}
+
+.nav-arrow.right {
+  right: -2.5rem;
+}
+
+/* --- Card Layout --- */
+.panel-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 30rem;
+  gap: 1.5rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: #c31d2a;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.panel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Info --- */
+.panel-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.4s ease;
+}
+
+.panel-card:hover .panel-info {
+  transform: translateY(-2px);
+}
+
+.panel-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #c31d2a;
+}
+
+.panel-info p.main-description {
+  margin: 1.5rem 4rem 1.5rem 4rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- CTA Link --- */
+.panel-info a {
+  display: block;
+  width: fit-content;
+  padding: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #c31d2a;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  position: relative;
+  align-self: center;
+  overflow: hidden;
+}
+
+.panel-info a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #c31d2a;
+  transition: width 0.3s ease;
+}
+
+.panel-info a:hover {
+  color: #7a8ea0;
+}
+
+.panel-info a:hover::after {
+  width: 100%;
+}
+
+/* --- Image --- */
+.panel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+  height: 30rem;
+  background: rgba(0, 0, 0, 0.015);
+  border-radius: 1rem;
+}
+
+.panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  border-radius: 1rem;
+  border: solid #c31d2a;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.05));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+
+.panel-image img:hover {
+  transform: scale(1.04);
+  filter: brightness(1.05) contrast(1.05);
+}
+
+/* --- Dots --- */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carousel-dots .dot.active {
+  background: #c31d2a;
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot:hover {
+  transform: scale(1.3);
+  background: #c31d2a;
+}
+
+/* --- Divider --- */
 .divider-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
   width: 80%;
-  /* CHANGE: Use clamp() for fluid, constrained margin */
-  /* Syntax: clamp(MINIMUM_SIZE, PREFERRED_FLUID_SIZE, MAXIMUM_SIZE) */
-  /* margin-top: clamp( 0.1rem, 0vw, 0.5rem); 
-  margin-bottom: clamp(0.5rem, 1vw, 1.5rem); */
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2rem auto;
   padding: 10px;
 }
+
 .line {
   flex-grow: 1;
   height: 3px;
@@ -42,4 +203,35 @@ white: #ffffff */
   font-size: 1.3rem;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .panel-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    padding: 2rem;
+    box-shadow: none;
+    border: none;
+  }
+
+  .panel-info p.main-description {
+    margin: 1rem 0;
+  }
+
+  .panel-image {
+    width: 80%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .nav-arrow.left {
+    left: -1.2rem;
+  }
+
+  .nav-arrow.right {
+    right: -1.2rem;
+  }
 }

@@ -1,30 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./fastners.css";
 import { fastenerData } from "./fastners_choices";
 
-export default function Panels() {
+// --- Utility to structure a single description string ---
+const structureDescription = (description) => {
+  if (!description) return { main: "", features: "", detail: "" };
+
+  const sentences = description.split(/\. *|; */g).filter((s) => s.trim().length > 0);
+  const main = sentences.slice(0, 2).join(". ") + (sentences.length > 0 ? "." : "");
+  const features = sentences.slice(2, 5).join(". ") + (sentences.length > 2 ? "." : "");
+  const detail = sentences.slice(5).join(". ") + (sentences.length > 5 ? "." : "");
+
+  return { main, features, detail };
+};
+
+export default function Fasteners() {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % fastenerData.length);
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + fastenerData.length) % fastenerData.length);
+  const nextSlide = useCallback(
+    () => setCurrent((prev) => (prev + 1) % fastenerData.length),
+    []
+  );
 
-  // Auto-slide (optional)
+  const prevSlide = useCallback(
+    () => setCurrent((prev) => (prev - 1 + fastenerData.length) % fastenerData.length),
+    []
+  );
+
+  // --- Preload next 2 images for smoother transitions ---
   useEffect(() => {
-    const nextIndex = (current + 1) % fastenerData.length;
-    const preload = new Image();
-    preload.src = fastenerData[nextIndex].image;
+    [1, 2].forEach((offset) => {
+      const nextIndex = (current + offset) % fastenerData.length;
+      const img = new Image();
+      img.src = fastenerData[nextIndex].image;
+    });
   }, [current]);
 
   const { title, description, image, link } = fastenerData[current];
+  const structuredInfo = useMemo(() => structureDescription(description), [description]);
+
+  // --- Keyboard navigation ---
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [nextSlide, prevSlide]);
 
   return (
     <div className="section2 panels-section">
       <div className="divider-container">
         <div className="line"></div>
         <div className="text">
-          <h3>Types of fasteners</h3>
+          <h3>TYPES OF FASTENERS</h3>
         </div>
         <div className="line"></div>
       </div>
@@ -33,7 +64,7 @@ export default function Panels() {
         <button
           className="nav-arrow left"
           onClick={prevSlide}
-          aria-label="Previous Panel"
+          aria-label="Previous Fastener"
         >
           ◀
         </button>
@@ -49,16 +80,30 @@ export default function Panels() {
           >
             <div className="panel-info">
               <h3>{title}</h3>
-              <p>{description}</p>
+
+              <p className="main-description">{structuredInfo.main}</p>
+
+              {structuredInfo.features && (
+                <p className="key-features-paragraph">{structuredInfo.features}</p>
+              )}
+
+              {structuredInfo.detail && (
+                <p className="composition-detail">{structuredInfo.detail}</p>
+              )}
+
               <a href={link}>SEE PRODUCTS FOR THIS ANCHOR →</a>
             </div>
+
             <div className="panel-image">
-              <img
+              <motion.img
                 src={image}
                 alt={title}
                 draggable="false"
                 loading="lazy"
-                onLoad={(e) => e.currentTarget.classList.add("loaded")}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                onError={(e) => (e.currentTarget.src = "/fallback.png")}
               />
             </div>
           </motion.div>
@@ -67,7 +112,7 @@ export default function Panels() {
         <button
           className="nav-arrow right"
           onClick={nextSlide}
-          aria-label="Next Panel"
+          aria-label="Next Fastener"
         >
           ▶
         </button>
