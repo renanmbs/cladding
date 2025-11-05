@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./panels.css";
 import { panelData } from "./panels_choices";
-// Import the Magnifier component
-import Magnifier from "../magnifier/magnifier"; // Adjust path if necessary
 
 export default function Panels() {
   const [current, setCurrent] = useState(0);
@@ -12,13 +10,12 @@ export default function Panels() {
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + panelData.length) % panelData.length);
 
-  // Preloading image for next slide
+  // Auto-slide (optional)
   useEffect(() => {
     const nextIndex = (current + 1) % panelData.length;
     const preload = new Image();
     preload.src = panelData[nextIndex].image;
   }, [current]);
-
   const { title, description, image, link } = panelData[current];
 
   return (
@@ -54,12 +51,13 @@ export default function Panels() {
               <p>{description}</p>
               <a href={link}>SEE PRODUCTS FOR THIS PANEL →</a>
             </div>
-            {/* 💡 Replaced <img> with Magnifier component */}
             <div className="panel-image">
-              <Magnifier 
-                src={image} 
-                alt={title} 
-                zoom={2} 
+              <img
+                src={image}
+                alt={title}
+                draggable="false"
+                loading="lazy"
+                onLoad={(e) => e.currentTarget.classList.add("loaded")}
               />
             </div>
           </motion.div>

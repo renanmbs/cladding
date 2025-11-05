@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./fastners.css";
 import { fastenerData } from "./fastners_choices";
-// 💡 Import the Magnifier component
-import Magnifier from "../magnifier/magnifier"; // Adjust path if needed
 
-export default function Fasteners() { // 💡 Renamed function to Fasteners for clarity
+export default function Panels() {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % fastenerData.length);
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + fastenerData.length) % fastenerData.length);
 
-  // Preloading image for next slide
+  // Auto-slide (optional)
   useEffect(() => {
     const nextIndex = (current + 1) % fastenerData.length;
     const preload = new Image();
@@ -55,11 +53,12 @@ export default function Fasteners() { // 💡 Renamed function to Fasteners for 
               <a href={link}>SEE PRODUCTS FOR THIS ANCHOR →</a>
             </div>
             <div className="panel-image">
-              {/* 💡 Replaced <img> with Magnifier component */}
-              <Magnifier
+              <img
                 src={image}
                 alt={title}
-                zoom={2}
+                draggable="false"
+                loading="lazy"
+                onLoad={(e) => e.currentTarget.classList.add("loaded")}
               />
             </div>
           </motion.div>

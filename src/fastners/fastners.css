@@ -8,63 +8,6 @@ Blueish: #7a8ea0
 Light Grey: #cccccc
 white: #ffffff */
 
-.section {
-  width: 80%;
-  height: 100vh;
-  padding: 3rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.fastener-card {
-  /* keep your existing styling */
-  background: #fff;
-  color: #003366;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 800px;
-  margin-bottom: 2rem;
-  gap: 1.5rem;
-}
-
-/* Image box: fixed size, subtle background as placeholder, centered content */
-.fastener-card img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-
-  /* new */
-  display: block;
-  opacity: 0;                      /* start hidden */
-  transition: opacity 320ms ease;  /* smooth fade */
-  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.04));
-  will-change: opacity;
-  -webkit-backface-visibility: hidden; /* reduce flicker in some browsers */
-}
-
-/* When the image finishes loading we flip this class on (see JSX snippet) */
-.fastener-card img.loaded {
-  opacity: 1;
-}
-
-/* Optional: show a lightweight border or subtle box-shadow while loading */
-.fastener-card .img-loading {
-  position: relative;
-  outline: 1px solid rgba(0,0,0,0.03);
-  border-radius: 0.5rem;
-}
-
-.fastener-info {
-  display: flex;
-  flex-direction: column;
-}
-
 .carousel-dots {
   margin-top: 1rem;
   opacity: 0.7;
