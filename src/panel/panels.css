@@ -68,7 +68,7 @@
 }
 
 .panel-card:hover .panel-info {
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .panel-info h3 {

@@ -68,9 +68,9 @@
   transition: transform 0.4s ease;
 }
 
-.panel-card:hover .panel-info {
+/* .panel-card:hover .panel-info {
   transform: translateY(-2px);
-}
+} */
 
 .panel-info h3 {
   margin-top: 0;
