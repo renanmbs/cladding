@@ -17,6 +17,7 @@ const structureDescription = (description) => {
 
 export default function Fasteners() {
   const [current, setCurrent] = useState(0);
+  const [hovered, setHovered] = useState(false);
 
   const nextSlide = useCallback(
     () => setCurrent((prev) => (prev + 1) % fastenerData.length),
@@ -30,19 +31,22 @@ export default function Fasteners() {
 
   // --- Preload next 2 images for smoother transitions ---
   useEffect(() => {
+    if (!fastenerData.length) return;
     [1, 2].forEach((offset) => {
       const nextIndex = (current + offset) % fastenerData.length;
       const img = new Image();
-      img.src = fastenerData[nextIndex].image;
+      img.src = fastenerData[nextIndex]?.image || "";
     });
   }, [current]);
 
+  // eslint-disable-next-line
   const { title, description, image, link } = fastenerData[current];
   const structuredInfo = useMemo(() => structureDescription(description), [description]);
 
   // --- Keyboard navigation ---
   useEffect(() => {
     const handleKey = (e) => {
+      if (["INPUT", "TEXTAREA"].includes(e.target.tagName)) return;
       if (e.key === "ArrowRight") nextSlide();
       if (e.key === "ArrowLeft") prevSlide();
     };
@@ -95,16 +99,30 @@ export default function Fasteners() {
             </div>
 
             <div className="panel-image">
-              <motion.img
-                src={image}
-                alt={title}
-                draggable="false"
-                loading="lazy"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
-                onError={(e) => (e.currentTarget.src = "/fallback.png")}
-              />
+              <motion.div
+                className="image-wrapper"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={hovered ? "hover" : "main"}
+                    src={
+                      hovered && fastenerData[current].hoverImage
+                        ? fastenerData[current].hoverImage
+                        : fastenerData[current].image
+                    }
+                    alt={title}
+                    draggable="false"
+                    loading="lazy"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    onError={(e) => (e.currentTarget.src = "/fallback.png")}
+                  />
+                </AnimatePresence>
+              </motion.div>
             </div>
           </motion.div>
         </AnimatePresence>

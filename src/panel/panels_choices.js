@@ -2,7 +2,7 @@ export const panelData = [
   {
     title: "HPL/Phenolic",
     description:
-      "Panels consisting of a core made with resin and high-density thermosetting cellulose fibers. Various materials with different finishes are applied over this compact core. They are easy to maintain, cost-effective, and come in a wide range of colors and patterns.",
+      "Panels consisting of a core made with resin and high-density thermosetting cellulose fibers. Various materials with different finishes are applied over this compact core. Example Brands: Trespa, LDU SUCKS, Hello Martin..",
     image: "/Panel/HPL.png",
     link: "",
   },
