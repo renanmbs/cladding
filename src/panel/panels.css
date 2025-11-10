@@ -1,5 +1,4 @@
-/* --- Wrapper --- */
-/* .panel-card-wrapper {
+ /* .panel-card-wrapper {
   position: relative;
   width: 90%;
   margin: 0 auto;
@@ -7,10 +6,9 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-} */
+} 
 
-/* --- Navigation arrows --- */
-/* .nav-arrow {
+ .nav-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -36,10 +34,9 @@
 
 .nav-arrow.right {
   right: -2.5rem;
-} */
+} 
 
-/* --- Panel card --- */
-/* .panel-card {
+ .panel-card {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -77,10 +74,10 @@
   font-size: 2.2rem;
   text-transform: uppercase;
   color: #c31d2a;
-} */
+} 
 
-/* --- Descriptions --- */
-/* .panel-info p.main-description {
+
+ .panel-info p.main-description {
   margin: 1.5rem auto;
   font-size: 1.15rem;
   font-weight: 500;
@@ -109,10 +106,10 @@
   line-height: 1.6;
   color: #666;
   text-align: justify;
-} */
+} 
 
-/* --- CTA Link --- */
-/* .panel-info a {
+
+ .panel-info a {
   display: block;
   width: fit-content;
   padding: 0.5rem 0;
@@ -144,10 +141,10 @@
 
 .panel-info a:hover::after {
   width: 100%;
-} */
+} 
 
-/* --- Image --- */
-/* .panel-image {
+
+ .panel-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,10 +170,9 @@
   transform: scale(1.04);
   filter: brightness(1.05) contrast(1.05);
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-} */
+} 
 
-/* --- Dots --- */
-/* .carousel-dots {
+ .carousel-dots {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
@@ -200,10 +196,9 @@
 .carousel-dots .dot:hover {
   transform: scale(1.3);
   background: #c31d2a;
-} */
+} 
 
-/* --- Responsive --- */
-/* @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .panel-card {
     flex-direction: column;
     text-align: center;
@@ -231,274 +226,362 @@
   .nav-arrow.right {
     right: -1.2rem;
   }
-} */
+}  */
 
-/* --- Section --- */
-.section2 {
-  width: 100%;
-  min-height: 100dvh;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: #000;
-  padding: clamp(1rem, 2vw, 4rem);
-  overflow-x: hidden;
-}
+/* --- Base Styles (Desktop/Large Screens) --- */
 
-/* --- Divider --- */
-.divider-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(90%, 1200px);
-  margin: 0 auto clamp(1rem, 3vw, 2.5rem);
-}
-
-.line {
-  flex-grow: 1;
-  height: 3px;
-  background: linear-gradient(to right, #c31d2a, #cccccc);
-}
-
-.divider-container .line:last-child {
-  background: linear-gradient(to left, #c31d2a, #cccccc);
-}
-
-.text {
-  padding: 0 1rem;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  color: #fff;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
-/* --- Panel Wrapper --- */
 .panel-card-wrapper {
   position: relative;
-  width: min(95%, 1200px);
+  width: 90%;
+  /* Max width for large screens */
+  max-width: 1200px; 
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   overflow: visible;
-}
+} 
 
-/* --- Navigation Arrows --- */
 .nav-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  /* Using clamp for responsive font size */
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  background: transparent;
   border: none;
-  font-size: clamp(1.3rem, 3vw, 2rem);
-  padding: clamp(0.4rem, 1vw, 0.8rem);
-  border-radius: 50%;
+  color: #ffffff;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.25s ease;
-  z-index: 10;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease, opacity 0.25s ease;
+  z-index: 2;
+  padding: 0.25rem;
 }
 
 .nav-arrow:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-50%) scale(1.1);
+  opacity: 0.7;
+  transform: translateY(-50%) scale(1.15);
+  color: #c31d2a;
 }
 
 .nav-arrow.left {
-  left: clamp(0.5rem, 1vw, 1.5rem);
+  /* Adjusted position slightly for large screens */
+  left: -4rem; 
 }
 
 .nav-arrow.right {
-  right: clamp(0.5rem, 1vw, 1.5rem);
-}
+  /* Adjusted position slightly for large screens */
+  right: -4rem; 
+} 
 
-/* --- Panel Card --- */
 .panel-card {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: clamp(1rem, 2vw, 3rem);
-  padding: clamp(1.5rem, 3vw, 3rem);
-  border-radius: 1.25rem;
-  background: #fff;
-  color: #323b41;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 1000px;
-  min-height: 28rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* Replaced fixed height with dynamic one */
+  height: auto; 
+  min-height: 30rem;
+  gap: 1.5rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: #c31d2a;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .panel-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Panel Info --- */
 .panel-info {
-  flex: 1;
+  /* Allow info section to shrink */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: clamp(1rem, 3vw, 2.5rem);
+  transition: transform 0.4s ease;
+}
+
+.panel-card:hover .panel-info {
+  transform: none;
 }
 
 .panel-info h3 {
-  color: #c31d2a;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-  margin-bottom: clamp(0.75rem, 1.2vw, 1rem);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 2.2rem;
   text-transform: uppercase;
-}
-
-.panel-info p {
-  line-height: 1.6;
-}
+  color: #c31d2a;
+} 
 
 .panel-info p.main-description {
+  margin: 1.5rem auto;
+  font-size: 1.15rem;
+  font-weight: 500;
   color: #333;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  margin: 1rem 0;
+  line-height: 1.6;
+  /* Use 100% width on mobile */
+  max-width: 85%; 
   text-align: justify;
+  text-align-last: center;
 }
 
 .panel-info p.key-features-paragraph {
-  background: #f8f8f8;
-  border-left: 4px solid #c31d2a;
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
   color: #222;
-  font-size: clamp(0.95rem, 1.3vw, 1rem);
-  margin: 1rem 0;
-}
-
-.panel-info p.composition-detail {
-  color: #666;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  margin-top: 1rem;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  border-left: 5px solid #c31d2a;
+  border-radius: 6px;
   text-align: justify;
 }
 
-/* --- CTA Link --- */
+.panel-info p.composition-detail {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
+} 
+
 .panel-info a {
-  display: inline-block;
-  margin-top: 1rem;
+  display: block;
+  width: fit-content;
+  padding: 0.5rem 0;
+  font-size: 1.05rem;
   color: #c31d2a;
   font-weight: 700;
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
-  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
   position: relative;
+  align-self: center;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .panel-info a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: 0;
+  width: 0%;
   height: 2px;
-  width: 0;
-  background: #c31d2a;
+  background-color: #c31d2a;
   transition: width 0.3s ease;
+}
+
+.panel-info a:hover {
+  color: #7a8ea0;
 }
 
 .panel-info a:hover::after {
   width: 100%;
-}
+} 
 
-/* --- Image --- */
 .panel-image {
-  flex-shrink: 0;
-  width: clamp(16rem, 35vw, 28rem);
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Fixed width removed, using flex-basis */
+  flex: 0 0 30rem; 
+  height: 30rem;
+  background: rgba(0, 0, 0, 0.015);
   border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.02);
 }
 
 .panel-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
   border-radius: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.35s ease, filter 0.35s ease;
+  border: solid #c31d2a;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.05));
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
 }
 
 .panel-image img:hover {
   transform: scale(1.04);
-  filter: brightness(1.05);
-}
+  filter: brightness(1.05) contrast(1.05);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+} 
 
-/* --- Carousel Dots --- */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  margin-top: clamp(1rem, 2vw, 2rem);
-  gap: 0.6rem;
+  margin-top: 1rem;
+  gap: 0.5rem;
 }
 
 .carousel-dots .dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #bbb;
-  transition: all 0.25s ease;
+  background: #ccc;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .carousel-dots .dot.active {
   background: #c31d2a;
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot:hover {
   transform: scale(1.3);
-}
+  background: #c31d2a;
+} 
 
-/* --- Responsive Adjustments --- */
+/* ========================================================================= */
+/* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
+/* ========================================================================= */
 
-/* Tablets */
-@media (max-width: 1024px) {
+/* --- 💻 Small Laptops & Large Tablets (Max 1200px) --- */
+@media (max-width: 1200px) {
   .panel-card {
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-}
-
-/* Phones / Small Devices */
-@media (max-width: 768px) {
-  .panel-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 1.5rem;
+    padding: 2rem; /* Reduced overall padding */
+    gap: 1rem;
+    min-height: 25rem; /* Reduced minimum height */
   }
 
-  .panel-info {
-    padding-right: 0;
+  .panel-info h3 {
+    font-size: 1.8rem; /* Smaller title */
+  }
+
+  .panel-info p.main-description {
+    font-size: 1.1rem; /* Slightly smaller text */
   }
 
   .panel-image {
-    width: 80%;
-    margin-top: 1.5rem;
+    /* Reduce the image section's width slightly */
+    flex: 0 0 25rem; 
+    height: 25rem;
   }
-
+  
   .nav-arrow.left {
-    left: 0.5rem;
+    left: -2.5rem; /* Bring arrows closer */
   }
 
   .nav-arrow.right {
-    right: 0.5rem;
-  }
+    right: -2.5rem; /* Bring arrows closer */
+  } 
 }
 
-/* Ultra-wide Displays */
-@media (min-width: 1800px) {
+/* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
+/* This is where the layout shifts from row to column */
+@media (max-width: 768px) {
   .panel-card {
-    max-width: 1400px;
+    /* Existing column layout preserved */
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    padding: 2rem;
+    min-height: auto; 
+    box-shadow: none;
+    border: none;
+    gap: 0; /* Adjusting gap for vertical flow */
   }
 
-  .panel-info p {
-    max-width: 85%;
+  .panel-info {
+    /* Ensure info takes up full width when stacked */
+    width: 100%; 
+  }
+
+  .panel-info h3 {
+    font-size: 1.5rem; /* Further reduction */
+  }
+  
+  .panel-info p.main-description {
+    margin: 1rem auto;
+    font-size: 1rem; 
+    max-width: 100%; /* Allow full width when stacked */
+    text-align: center;
+  }
+
+  .panel-info p.key-features-paragraph {
+    font-size: 0.95rem;
+    padding: 1rem;
+    text-align: center; /* Center text when stacked */
+  }
+
+  .panel-info p.composition-detail {
+    font-size: 0.9rem;
+    text-align: center; /* Center text when stacked */
+  }
+
+  .panel-image {
+    /* Image section now takes up 90% of the wrapper width */
+    width: 90%;
+    flex: none; /* Remove flex basis */
+    height: 20rem; /* Fixed height for image area on tablet */
+    margin-top: 1.5rem;
+  }
+
+  .nav-arrow {
+    font-size: 1.5rem;
+  }
+
+  .nav-arrow.left {
+    left: 0.5rem; /* Keep arrows slightly inside the view */
+  }
+
+  .nav-arrow.right {
+    right: 0.5rem; /* Keep arrows slightly inside the view */
+  }
+} 
+
+/* --- 📞 Mobile Phones (Max 480px) --- */
+@media (max-width: 480px) {
+  .panel-card {
+    padding: 1rem;
+    /* Remove hover effect on touch */
+    transition: none;
+    transform: none;
+  }
+
+  .panel-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .panel-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .panel-info p.main-description {
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+  }
+  
+  .panel-info p.key-features-paragraph {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin: 1rem 0;
+  }
+  
+  .panel-image {
+    width: 100%;
+    height: 15rem; /* Smaller image height for phones */
+  }
+  
+  /* Make arrows much smaller and closer to the card */
+  .nav-arrow {
+    font-size: 1.2rem;
+    top: 40%;
+  }
+
+  .nav-arrow.left {
+    left: 0.2rem;
+  }
+
+  .nav-arrow.right {
+    right: 0.2rem;
   }
 }

@@ -100,7 +100,7 @@ const handleBackToMenu = useCallback(() => {
           role="group"
           aria-label="Choose a product category"
         >
-          <h2>Choose your starting point:</h2>
+          <h2>Choose your starting point</h2>
           <div className="choices">
             <button onClick={() => handleStart('panels')}>Panels</button>
             <button onClick={() => handleStart('cladding')}>Cladding</button>

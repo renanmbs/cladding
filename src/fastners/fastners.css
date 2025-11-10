@@ -1,4 +1,3 @@
-/* --- Divider --- */
 /* .divider-container {
   display: flex;
   align-items: center;
@@ -29,79 +28,87 @@
 .divider-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: min(90%, 1200px);
-  margin: 0 auto clamp(1rem, 3vw, 2.5rem);
+  /* Use a max-width and percentage for fluidity */
+  width: 80%; 
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 10px;
+  /* Ensure divider is centered */
+  justify-content: center; 
 }
 
 .line {
   flex-grow: 1;
   height: 3px;
-  background: linear-gradient(to right, #c31d2a, #cccccc);
+  background: linear-gradient(to right, #c31d2a, 10%, #cccccc);
 }
 
 .divider-container .line:last-child {
-  background: linear-gradient(to left, #c31d2a, #cccccc);
+  background: linear-gradient(to left, #c31d2a, 10%, #cccccc);
 }
 
 .text {
   padding: 0 1rem;
   color: #fff;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-family: sans-serif;
+  /* Use a base font-size that can be scaled */
+  font-size: 1.3rem; 
   white-space: nowrap;
   text-transform: uppercase;
 }
 
-/* --- Responsive --- */
-
-/* Tablets (iPads, small laptops) */
-@media (max-width: 1024px) {
-  .panel-card {
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-}
-
-/* Phones (portrait) */
-@media (max-width: 768px) {
-  .panel-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 1.5rem;
-  }
-
-  .panel-info {
-    padding-right: 0;
-  }
-
-  .panel-image {
-    width: 85%;
-    margin-top: 1.5rem;
-  }
-
-  .nav-arrow.left {
-    left: 0.5rem;
-  }
-
-  .nav-arrow.right {
-    right: 0.5rem;
+/* --- 💻 Small Laptops & Large Tablets (Max 1200px) --- */
+@media (max-width: 1200px) {
+  .divider-container {
+    width: 90%;
   }
 
   .text {
-    white-space: normal;
-    text-align: center;
+    font-size: 1.1rem;
   }
 }
 
-/* Large & 4K Displays */
-@media (min-width: 1800px) {
-  .panel-card {
-    max-width: 1400px;
+
+/* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
+@media (max-width: 768px) {
+  .divider-container {
+    width: 95%;
+    margin-bottom: 1.5rem;
   }
 
-  .panel-info p {
-    max-width: 85%;
+  .text {
+    /* Allow text to wrap if it's too long for the smaller screen */
+    white-space: normal; 
+    text-align: center;
+    font-size: 1rem; 
   }
+
+  /* Reduce thickness of divider lines to match smaller text */
+  .line {
+    height: 2px;
+  }
+}
+
+
+/* --- 📞 Mobile Phones (Max 480px) --- */
+@media (max-width: 480px) {
+  .divider-container {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 5px;
+  }
+
+  .text {
+    /* Further reduction for mobile */
+    font-size: 0.9rem; 
+    padding: 0 0.5rem;
+  }
+
+  .line {
+    height: 1px;
+  }
+  
+  /* The core `.panel-card` adjustments (like flex-direction: column) 
+     are assumed to be defined in your global/shared Panels CSS file, 
+     which is why they are not repeated here. */
 }
