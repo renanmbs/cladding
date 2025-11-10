@@ -612,6 +612,10 @@ body {
     width: 100%; /* Full width for stacked buttons */
     min-width: auto;
   }
+
+  .back-button {
+  margin-top: 4rem;
+}
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
