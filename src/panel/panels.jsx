@@ -17,30 +17,10 @@ const structureDescription = (description) => {
   // 2. Features/Details (The rest of the text)
   const detailSentences = sentences.slice(2);
 
-  // This logic is a placeholder. For truly good UX, you should update panelData
-  // to have a dedicated 'features' array. For now, we'll keep the full
-  // text to split visually.
-
   // Split the remaining text into three sections for visual flow:
   // For simplicity, we'll split the remaining text into 3 parts.
   const featureCandidate = detailSentences.slice(0, 3).join(". ") + (detailSentences.length > 0 ? "." : "");
   const detailCandidate = detailSentences.slice(3).join(". ") + (detailSentences.length > 3 ? "." : "");
-
-
-  // *** IMPORTANT: The best UI/UX fix is to update your panelData to this structure:
-  // {
-  //   title: "GFRC & Fiber Cement/Concrete ",
-  //   shortDescription: "Glass fiber reinforced concrete (GFRC) panels are mainly used in exterior building façades and as architectural precast concrete.",
-  //   keyFeatures: [
-  //     "Material Composite: Portland cement, fine aggregate, water, acrylic copolymer, and alkali-resistant glass fiber.",
-  //     "Core Material: Fiber cement is reinforced with cellulose fibers.",
-  //     "Primary Use: Exterior building façades and architectural precast concrete."
-  //   ],
-  //   detailDescription: "It is a composite of materials such as Portland cement, fine aggregate, water...",
-  //   image: "/Panel/GFRC.png",
-  //   link: ""
-  // }
-  // Since you haven't, we will dynamically split the single string:
 
   return {
     main: main,
@@ -116,9 +96,6 @@ export default function Panels() {
               )}
 
               {/* The longer, detailed composition info */}
-              <p className="composition-detail">
-                {structuredInfo.detail}
-              </p>
 
               <a href={link}>SEE PRODUCTS FOR THIS PANEL →</a>
             </div>

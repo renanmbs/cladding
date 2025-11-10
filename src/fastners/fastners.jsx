@@ -91,10 +91,6 @@ export default function Fasteners() {
                 <p className="key-features-paragraph">{structuredInfo.features}</p>
               )}
 
-              {structuredInfo.detail && (
-                <p className="composition-detail">{structuredInfo.detail}</p>
-              )}
-
               <a href={link}>SEE PRODUCTS FOR THIS ANCHOR →</a>
             </div>
 
@@ -112,6 +108,7 @@ export default function Fasteners() {
                         ? fastenerData[current].hoverImage
                         : fastenerData[current].image
                     }
+                    className="fastener-image"
                     alt={title}
                     draggable="false"
                     loading="lazy"

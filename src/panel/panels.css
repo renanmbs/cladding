@@ -322,7 +322,6 @@
   font-weight: 500;
   color: #333;
   line-height: 1.6;
-  /* Use 100% width on mobile */
   max-width: 85%; 
   text-align: justify;
   text-align-last: center;
@@ -337,16 +336,8 @@
   background-color: #f9f9f9;
   border-left: 5px solid #c31d2a;
   border-radius: 6px;
-  text-align: justify;
+  text-align: left;
 }
-
-.panel-info p.composition-detail {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #666;
-  text-align: justify;
-} 
 
 .panel-info a {
   display: block;
@@ -386,10 +377,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Fixed width removed, using flex-basis */
   flex: 0 0 30rem; 
   height: 30rem;
-  background: rgba(0, 0, 0, 0.015);
   border-radius: 1rem;
 }
 
@@ -441,153 +430,150 @@
 /* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
 /* ========================================================================= */
 
-/* --- 💻 Small Laptops & Large Tablets (Max 1200px) --- */
 @media (max-width: 1200px) {
+  
+  /* --- Panels / Fasteners Component (Carousel) --- */
   .panel-card {
-    padding: 2rem; /* Reduced overall padding */
+    padding: 2rem;
     gap: 1rem;
-    min-height: 25rem; /* Reduced minimum height */
+    min-height: 25rem;
+    border: solid red;
   }
-
   .panel-info h3 {
-    font-size: 1.8rem; /* Smaller title */
+    font-size: 1.8rem;
   }
-
   .panel-info p.main-description {
-    font-size: 1.1rem; /* Slightly smaller text */
+    font-size: 1.1rem;
   }
-
   .panel-image {
-    /* Reduce the image section's width slightly */
-    flex: 0 0 25rem; 
+    flex: 0 0 25rem;
     height: 25rem;
   }
-  
   .nav-arrow.left {
-    left: -2.5rem; /* Bring arrows closer */
+    left: -3rem; /* Fixed arrow placement */
+  }
+  .nav-arrow.right {
+    right: -3rem; /* Fixed arrow placement */
+  }
+  .text {
+    font-size: 1.1rem; /* Fasteners divider text scale */
   }
 
-  .nav-arrow.right {
-    right: -2.5rem; /* Bring arrows closer */
-  } 
+  .panel-image img {
+  object-fit: cover;
+}
+
+.panel-info p.key-features-paragraph {
+  margin: 1rem 0 0.5rem 0;
+  padding: 1rem 1rem;
+}
+
+.panel-info a {
+  display: block;
+  width: fit-content;
+  padding: 0rem 0;
+  font-size: 1.05rem;
+  color: #c31d2a;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  position: relative;
+  align-self: center;
+  overflow: hidden;
+  text-decoration: none;
+}
 }
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
-/* This is where the layout shifts from row to column */
 @media (max-width: 768px) {
+  
+  /* --- Panels / Fasteners Component (Column Layout) --- */
   .panel-card {
-    /* Existing column layout preserved */
     flex-direction: column;
     text-align: center;
     align-items: center;
     height: auto;
-    padding: 2rem;
-    min-height: auto; 
+    padding: 2rem 0.5rem; /* Reduced horizontal padding for arrow space */
+    min-height: auto;
     box-shadow: none;
     border: none;
-    gap: 0; /* Adjusting gap for vertical flow */
+    gap: 0;
   }
 
   .panel-info {
-    /* Ensure info takes up full width when stacked */
-    width: 100%; 
+    width: 100%;
   }
-
   .panel-info h3 {
-    font-size: 1.5rem; /* Further reduction */
+    font-size: 1.5rem;
   }
-  
   .panel-info p.main-description {
-    margin: 1rem auto;
-    font-size: 1rem; 
-    max-width: 100%; /* Allow full width when stacked */
+    font-size: 1rem;
+    max-width: 100%;
     text-align: center;
+    margin: 0.5rem 1rem;
   }
 
   .panel-info p.key-features-paragraph {
-    font-size: 0.95rem;
-    padding: 1rem;
-    text-align: center; /* Center text when stacked */
-  }
-
-  .panel-info p.composition-detail {
-    font-size: 0.9rem;
-    text-align: center; /* Center text when stacked */
-  }
+  margin: 1.5rem 1rem;
+}
 
   .panel-image {
-    /* Image section now takes up 90% of the wrapper width */
     width: 90%;
-    flex: none; /* Remove flex basis */
-    height: 20rem; /* Fixed height for image area on tablet */
+    flex: none;
+    height: 25rem; /* Increased image size fix */
     margin-top: 1.5rem;
   }
-
   .nav-arrow {
-    font-size: 1.5rem;
-    color: #c31d2a;
+    font-size: 1.8rem; /* Increased arrow size fix */
+    top: 50%;
   }
-
-  .nav-arrow.left {
-    left: 0.5rem; /* Keep arrows slightly inside the view */
-  }
-
-  .nav-arrow.right {
-    right: 0.5rem; /* Keep arrows slightly inside the view */
-  }
-
-  .panel-image img {
-    height: 11rem;;
-  }
-} 
+}
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {
+  
+  /* --- Panels / Fasteners Component (Mobile Optimization) --- */
   .panel-card {
-    padding: 1rem;
-    /* Remove hover effect on touch */
+    padding: 1rem 0; /* Remove side padding */
     transition: none;
     transform: none;
   }
-
   .panel-card:hover {
     transform: none;
     box-shadow: none;
   }
-
   .panel-info h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
-
   .panel-info p.main-description {
     font-size: 0.95rem;
     margin: 0.5rem 0;
   }
-  
-  .panel-info p.key-features-paragraph {
-    font-size: 0.9rem;
-    padding: 0.8rem;
-    margin: 1rem 0;
-  }
-  
   .panel-image {
     width: 100%;
-    height: 10rem; /* Smaller image height for phones */
+    height: 18rem; /* Increased image size fix */
   }
-  
-  /* Make arrows much smaller and closer to the card */
   .nav-arrow {
-    font-size: 1.2rem;
-    top: 45%;
-    color: #c31d2a;
+    font-size: 1.5rem;
+    top: 40%;
   }
-
   .nav-arrow.left {
-    left: 0.2rem;
+    left: -1vw; /* Arrow placement fix */
   }
-
   .nav-arrow.right {
-    right: 0.2rem;
+    right: -1vw; /* Arrow placement fix */
   }
 }
+
+
+/*
+Logo image too big
+
+Panels card too big (image) - overlaps cladding
+
+Cladding overlaps fasteners
+
+Fasteners divider too big
+
+*/
