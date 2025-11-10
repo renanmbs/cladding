@@ -1,7 +1,6 @@
-.section2 {
+/* .section2 {
   width: 100%;
   height: 100vh;
-  /* padding: 3rem; */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -41,7 +40,7 @@ h2 {
 .cladding-card img {
   width: 100%;
   height: 20rem;
-  object-fit: contain; /*Or fill*/
+  object-fit: contain;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
@@ -59,4 +58,152 @@ h2 {
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.5;
+} */
+
+:root {
+  --primary-red: #612d31;
+  --secondary-red: #c31d2a;
+  --text-dark: #323b41;
+  --text-white: #ffffff;
+  --bg-dark: #121212;
+}
+
+/* ---------- CLADDING SECTION ---------- */
+.section2 {
+  width: 100%;
+  min-height: 100dvh;
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 3rem);
+  background: var(--bg-dark);
+  box-sizing: border-box;
+}
+
+.section2 h2,
+.section2 h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  letter-spacing: 1px;
+}
+
+/* Divider Title (if used globally) */
+.divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.divider-container .line {
+  flex: 1;
+  height: 2px;
+  background: var(--secondary-red);
+  opacity: 0.6;
+}
+
+.divider-container .text h3 {
+  color: var(--text-white);
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- CARD GRID ---------- */
+.cladding-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- CARD ---------- */
+.cladding-card {
+  background: var(--text-white);
+  color: var(--text-dark);
+  border-radius: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  width: clamp(17rem, 25vw, 25rem);
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cladding-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cladding-card img {
+  width: 100%;
+  height: clamp(12rem, 40vw, 20rem);
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.img2 {
+  object-fit: cover !important;
+}
+
+.cladding-card h3 {
+  color: var(--secondary-red);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 0.8rem;
+}
+
+.cladding-card p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 1024px) {
+  .cladding-card {
+    width: clamp(18rem, 45vw, 22rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .cladding-cards {
+    gap: 2rem;
+  }
+  .cladding-card {
+    width: min(90%, 25rem);
+  }
+  .cladding-card img {
+    height: 15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section2 {
+    padding: 1.5rem 1rem;
+  }
+  .divider-container .text h3 {
+    font-size: 1.2rem;
+  }
+  .cladding-card {
+    width: 100%;
+  }
+  .cladding-card img {
+    height: 12rem;
+  }
+  .cladding-card p {
+    font-size: 0.95rem;
+  }
 }

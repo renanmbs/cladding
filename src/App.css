@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-red: #612d31;
   --secondary-red: #c31d2a;
   --text-white: #ffffff;
@@ -14,7 +14,6 @@ body {
   font-family: var(--font-sans);
   background-color: #121212;
   overflow: hidden;
-   /* Prevents unwanted global scroll */
 }
 
 .App {
@@ -26,10 +25,10 @@ body {
   background-position: center center;
   display: flex;
   flex-direction: column;
-}
+} */
 
 /* Banner (Navigation) */
-.banner {
+/* .banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,20 +81,20 @@ body {
 
 .App nav ul li:hover::after {
   width: 100%;
-}
+} */
 
 /* HERO SECTION (Banner + Spacer) */
-.hero-section {
+/* .hero-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
-}
+} */
 
 /* Spacer (Main Hero Content) */
-.spacer {
+/* .spacer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,10 +122,10 @@ body {
   height: 18rem;
   width: auto;
   margin-bottom: 2.2rem !important;
-}
+} */
 
 /* Start Buttons */
-.start-buttons {
+/* .start-buttons {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
@@ -197,10 +196,10 @@ body {
   justify-content: center;
   width: 100%;
   z-index: 10;
-}
+} */
 
 /* Back Button */
-.back-button {
+/* .back-button {
   margin-top: 2rem;
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
@@ -220,10 +219,10 @@ body {
   background: var(--primary-red);
   border-color: var(--primary-red);
   transform: scale(1.05);
-}
+} */
 
 /* Scroll Container for all sections */
-.scroll-container {
+/* .scroll-container {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -238,10 +237,10 @@ body {
 .scroll-container {
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
+} */
 
 /* Screen sections below hero */
-.screen {
+/* .screen {
   scroll-snap-align: start;
   min-height: 100vh;
   display: flex;
@@ -251,5 +250,285 @@ body {
   padding: 4rem 0rem;
   box-sizing: border-box;
   position: relative;
-  /* background: var(--bg-dark-overlay); */
+} */
+
+
+:root {
+  --primary-red: #612d31;
+  --secondary-red: #c31d2a;
+  --text-white: #ffffff;
+  --text-light: #f0f0f0;
+  --bg-dark-overlay: rgba(0, 0, 0, 0.7);
+  --bg-light-blur: rgba(255, 255, 255, 0.1);
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* -------- BASE -------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #121212;
+  overflow-x: hidden; /* allow vertical scroll again */
+}
+
+.App {
+  text-align: center;
+  background: center / cover no-repeat;
+  background-image: url('./image/Landing Page background blue.png');
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* -------- NAV / BANNER -------- */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 3rem);
+  color: var(--text-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.App-logo {
+  height: clamp(3rem, 8vw, 5rem);
+  transition: transform 0.3s ease;
+}
+.App-logo:hover {
+  transform: scale(1.05);
+}
+
+.banner nav ul {
+  display: flex;
+  gap: clamp(1rem, 3vw, 3rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.banner nav ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+}
+.banner nav ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--primary-red);
+  transition: width 0.3s ease;
+}
+.banner nav ul li:hover {
+  color: var(--secondary-red);
+}
+.banner nav ul li:hover::after {
+  width: 100%;
+}
+
+/* -------- HERO / SPACER -------- */
+.spacer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 2rem 1.5rem;
+  min-height: 100dvh; /* use dynamic vh to account for mobile UI bars */
+  box-sizing: border-box;
+}
+
+.spacer p {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 200;
+  max-width: 90%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.logo2 {
+  width: clamp(10rem, 40vw, 18rem);
+  height: auto;
+  margin-bottom: 2rem !important;
+}
+
+/* -------- START BUTTONS -------- */
+.start-buttons {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--bg-light-blur);
+  border-radius: 12px;
+  color: var(--text-white);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: min(90%, 600px);
+}
+
+.start-buttons h2 {
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.choices button {
+  padding: 0.8rem 1.6rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  background-color: var(--primary-red);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.choices button:hover {
+  background-color: var(--secondary-red);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.scroll-indicator {
+  margin-top: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  opacity: 0.9;
+  font-weight: 300;
+  animation: bounce 1.5s infinite;
+  color: var(--text-light);
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* -------- BACK BUTTON -------- */
+.back-button-wrapper {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.2);
+  color: var(--text-white);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.back-button:hover {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  transform: scale(1.05);
+}
+
+/* -------- SCROLL CONTAINER -------- */
+.scroll-container {
+  min-height: 100dvh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* -------- SECTIONS -------- */
+.screen {
+  min-height: 100dvh;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 1024px) {
+  .banner nav ul {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .banner nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .spacer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    background-attachment: scroll; /* mobile fix */
+  }
+  .spacer p {
+    font-size: 1.5rem;
+  }
+  .choices button {
+    width: 100%;
+  }
+  .start-buttons {
+    padding: 1rem;
+  }
+  .banner {
+    padding: 0.8rem 1rem;
+  }
+  .App-logo {
+    height: 3.5rem;
+  }
+}
+
+
