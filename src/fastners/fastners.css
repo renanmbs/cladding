@@ -107,8 +107,4 @@
   .line {
     height: 1px;
   }
-  
-  /* The core `.panel-card` adjustments (like flex-direction: column) 
-     are assumed to be defined in your global/shared Panels CSS file, 
-     which is why they are not repeated here. */
 }

@@ -525,6 +525,7 @@
 
   .nav-arrow {
     font-size: 1.5rem;
+    color: #c31d2a;
   }
 
   .nav-arrow.left {
@@ -533,6 +534,10 @@
 
   .nav-arrow.right {
     right: 0.5rem; /* Keep arrows slightly inside the view */
+  }
+
+  .panel-image img {
+    height: 11rem;;
   }
 } 
 
@@ -568,13 +573,14 @@
   
   .panel-image {
     width: 100%;
-    height: 15rem; /* Smaller image height for phones */
+    height: 10rem; /* Smaller image height for phones */
   }
   
   /* Make arrows much smaller and closer to the card */
   .nav-arrow {
     font-size: 1.2rem;
-    top: 40%;
+    top: 45%;
+    color: #c31d2a;
   }
 
   .nav-arrow.left {

@@ -121,8 +121,8 @@ h2 {
 }
 
 .cladding-card img {
-  /* Use max-height for image to control size within a card */
-  max-height: 20rem; 
+  max-height: none; 
+  /* We keep this block, but ensure max-height is only applied strategically */
   width: 100%;
   height: auto; /* Important: Use auto height for responsive images */
   object-fit: contain;
@@ -147,28 +147,6 @@ h2 {
 }
 
 /* Divider styles (assuming they are from cladding.css) */
-.divider-container {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  max-width: 1000px;
-  margin-bottom: 3rem;
-}
-
-.line {
-  flex-grow: 1;
-  height: 1px;
-  background-color: var(--text-white);
-  opacity: 0.3;
-}
-
-.text h3 {
-  padding: 0 2rem;
-  margin: 0;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-size: 2rem;
-}
 
 /* ========================================================================= */
 /* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
@@ -185,6 +163,11 @@ h2 {
     flex: 0 1 45%; 
     max-width: 45%;
     min-height: 28rem;
+  }
+
+  .cladding-card img {
+    /* Reapply a suitable max-height for a small laptop to keep proportion */
+    max-height: 16rem; 
   }
 }
 
@@ -207,14 +190,15 @@ h2 {
 
   .cladding-card {
     /* Cards now take up full width minus padding for a stacked look */
-    flex: 0 1 90%; 
-    max-width: 90%;
+    flex: 0 1 30%; 
+    max-width: 30%;
+    max-height: 25rem;
     min-height: auto; /* Let content dictate height */
     padding: 1.5rem 1rem;
   }
   
   .cladding-card img {
-    max-height: 15rem; /* Reduce image height */
+    max-height: 6rem; /* Reduce image height */
   }
 
   .cladding-card h3 {
@@ -235,7 +219,7 @@ h2 {
   
   .divider-container {
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .text h3 {
@@ -249,11 +233,13 @@ h2 {
 
   .cladding-card {
     /* Take up full viewport width (minus margins/padding) */
-    flex: 0 1 100%; 
-    max-width: 100%; 
+    flex: 0 1 80%; 
+    max-width: 80%; 
     padding: 1rem 0.8rem;
     /* Ensure hover scale doesn't push the card off the screen */
     transition: none; 
+    min-height: auto;
+    max-height: 15rem;
   }
   
   .cladding-card:hover {
@@ -261,6 +247,18 @@ h2 {
   }
   
   .cladding-card img {
-    max-height: 10rem; /* Smallest image height for phones */
+    max-height: 6rem; /* Smallest image height for phones */
   }
+
+  .cladding-card p{
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.cladding-card h3{
+  color: #c31d2a;
+  font-size: 1.3rem;
+  margin: 0;
+}
 }
