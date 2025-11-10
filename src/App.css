@@ -613,9 +613,9 @@ body {
     min-width: auto;
   }
 
-  .back-button {
-  margin-top: 4rem;
-}
+   .back-button-wrapper {
+    bottom: 0.5rem; /* was 2rem */
+  }
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
@@ -656,7 +656,7 @@ body {
   }
 
   .back-button-wrapper {
-    bottom: 1rem; /* Move back button up slightly */
+    bottom: 2rem; /* Move back button up slightly */
   }
 
   .back-button {
