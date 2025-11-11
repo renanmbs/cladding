@@ -712,8 +712,8 @@ min-height: 100dvh;
     /* Hide the navigation links completely to save space */
     justify-content:space-between; 
     padding: 0.2rem 0.8rem;
-    background: #cccccc6c; 
-    backdrop-filter: blur(15px);   
+    /* background: #cccccc6c; 
+    backdrop-filter: blur(15px);    */
   }
   
   .banner nav {
