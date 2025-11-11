@@ -196,11 +196,6 @@ h2 {
   .section2 {
     padding: 1rem 0.5rem;
   }
-  
-  .divider-container {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
 
   .text h3 {
     font-size: 1.1rem; /* Very small title */
@@ -218,6 +213,11 @@ h2 {
     transition: none; 
     min-height: auto;
     max-height: 18rem;
+  }
+  
+  .card2{
+    padding: 1rem 1.5rem;
+    border: solid red;
   }
   
   .cladding-card:hover {

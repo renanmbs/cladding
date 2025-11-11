@@ -31,7 +31,7 @@ export default function Cladding() {
           </p>
         </div>
 
-        <div className="cladding-card">
+        <div className="cladding-card card2">
           <img src="Cladding/Horizontal WB Thumbnail (1).png" alt="Thermal Wall Brackets" />
           <h3>THERMAL WALL BRACKETS</h3>
           <p>

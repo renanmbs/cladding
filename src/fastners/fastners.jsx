@@ -76,7 +76,7 @@ export default function Fasteners() {
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
-            className="panel-card"
+            className="panel-card cards2"
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -60 }}

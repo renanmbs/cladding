@@ -647,6 +647,10 @@ body {
     letter-spacing: 0.5px;
   }
 
+  .spacer{
+    overflow: hidden;
+  }
+
   .logo2 {
     height: 6rem;
     margin-bottom: 1rem !important;
