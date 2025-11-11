@@ -25,6 +25,8 @@
   text-transform: uppercase;
 } */
 
+/*Bright Red: #c31d2a Dark Red: #612d31 Black: #000000 Grey: #323b41 Blueish: #7a8ea0 Light Grey: #cccccc white: #ffffff */
+
 .divider-container {
   display: flex;
   align-items: center;

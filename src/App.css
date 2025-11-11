@@ -271,6 +271,7 @@ body {
   background-position: center center;
   /* overflow: hidden; */
   overflow-x: hidden;
+  background-color: black;
 }
 
 .App {
@@ -620,7 +621,9 @@ body {
   .banner {
     /* Hide the navigation links completely to save space */
     justify-content:space-between; 
-    padding: 0.5rem 0.8rem;
+    padding: 0.2rem 0.8rem;
+    background: #cccccc6c; 
+    backdrop-filter: blur(15px);   
   }
   
   .banner nav {

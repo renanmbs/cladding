@@ -10,7 +10,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  overflow-x: hidden;
 }
 
 code {
