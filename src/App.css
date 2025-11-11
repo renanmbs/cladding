@@ -756,7 +756,7 @@ min-height: 100dvh;
   }
 
   .App-logo {
-    height: 3rem; 
+    height: 1.5rem; 
     width: auto;
   }
 
@@ -810,8 +810,8 @@ min-height: 100dvh;
   justify-content: center; /* New */
   align-items: center; /* New */
    z-index: 1002;
-   height: 3rem;
-   width: 3rem;
+   height: 1.5rem;
+   width: 1.5rem;
   }
 
    .burger-icon-line {
