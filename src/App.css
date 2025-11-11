@@ -277,6 +277,11 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-image: url('./image/Landing Page background blue.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
 } 
 
 /* --- Banner (Navigation) --- */
@@ -614,7 +619,7 @@ body {
 
    .back-button-wrapper {
     bottom: 0.5rem; /* was 2rem */
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
 }
 
@@ -667,7 +672,7 @@ body {
   }
 
   .back-button-wrapper {
-    bottom: 0.5rem; /* Move back button up slightly */
+    bottom: 1rem; /* Move back button up slightly */
   }
 
   .back-button {
