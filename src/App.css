@@ -261,7 +261,8 @@ body {
 }
 
 html, body {
-  overflow-x: hidden;
+  background-color: #000;
+  overscroll-behavior: none;
 }
 body {
   overflow-y: auto; /* but locked to 'hidden' when menu is open */
@@ -369,6 +370,8 @@ body {
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
+  height: 100dvh;
+min-height: 100dvh;
 }
 
 .spacer p {
@@ -496,6 +499,8 @@ body {
 /* --- Scroll/Screen Containers --- */
 .scroll-container {
   height: 100vh;
+  height: 100dvh;
+min-height: 100dvh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -515,6 +520,8 @@ body {
   scroll-snap-align: start;
    height: 100vh;
   min-height: 100vh;
+  height: 100dvh;
+min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -567,6 +574,8 @@ body {
   right: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
+min-height: 100dvh;
   background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent dark background */
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -631,6 +640,7 @@ body {
 
   .spacer{
      min-height: 100vh;
+min-height: 100dvh;
   }
 }
 
@@ -730,6 +740,8 @@ body {
   .spacer{
     min-height: 95vh;
     max-height: 95vh;
+    min-height: 95dvh;
+    max-height: 95dvh;
     padding-top: 3.5rem;
   }
 
