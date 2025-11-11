@@ -216,7 +216,9 @@ h2 {
   }
   
   .card2{
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
+    max-height: 14rem;
+    max-width: 80%; 
     border: solid red;
   }
   

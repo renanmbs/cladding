@@ -264,18 +264,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  background-color: #121212;
+  background-image: url('./image/Landing Page background blue.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   /* overflow: hidden; */
   overflow-x: hidden;
 }
 
 .App {
   text-align: center;
-  background-image: url('./image/Landing Page background blue.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
   display: flex;
   flex-direction: column;
 } 
