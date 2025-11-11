@@ -547,14 +547,16 @@
     margin: 0 !important;
   }
   .nav-arrow {
-    font-size: 1rem;
-    /* top: 40%; */
+    font-size: 1.5rem; /* Make them slightly bigger to be clickable */
+    color: #c31d2a; /* Make them red so they are visible on the white card */
+    top: 50%; 
+    transform: translateY(-50%); /* Re-center them vertically */
   }
-  .nav-arrow.left {
-    left: -6vw;
+ .nav-arrow.left {
+    left: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
   }
   .nav-arrow.right {
-    right: -6vw;
+    right: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
   }
 
   .panel-info a {
