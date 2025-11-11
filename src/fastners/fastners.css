@@ -75,7 +75,7 @@
 @media (max-width: 768px) {
   .divider-container {
     width: 100%;
-    margin-bottom: 0rem;
+    margin: 0.3rem auto 0.3rem auto;
   }
 
   .text {

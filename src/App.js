@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import logo from './image/Monarch Metal White Transparent.png';
 import logo2 from "./image/Monarch Metal White Transparent.png";
 import './App.css';
 // import Lenis from '@studio-freight/lenis'; // REMOVED LENIS
@@ -10,8 +11,6 @@ import Fasteners from './fastners/fastners.jsx';
 function App() {
   const [sectionsRendered, setSectionsRendered] = useState(false);
   const [lastClickedSection, setLastClickedSection] = useState(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 
   const panelsRef = useRef(null);
   const claddingRef = useRef(null);
@@ -50,42 +49,40 @@ function App() {
   }, []);
 
   // Scroll-to-top handler
-  const handleBackToMenu = useCallback(() => {
-    if (menuRef.current) {
-      menuRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+const handleBackToMenu = useCallback(() => {
+  if (menuRef.current) {
+    menuRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 
-    // Delay the reset to let scroll finish smoothly
-    setTimeout(() => {
-      setSectionsRendered(false);
-      setLastClickedSection(null);
-    }, 600); // 0.6s matches the scroll animation speed
-  }, []);
+  // Delay the reset to let scroll finish smoothly
+  setTimeout(() => {
+    setSectionsRendered(false);
+    setLastClickedSection(null);
+  }, 600); // 0.6s matches the scroll animation speed
+}, []);
 
   return (
     <div className="App">
       {/* Banner */}
       <div className='banner' aria-label="Main Navigation">
-        <nav className="navbar">
-          <div
-            className={`hamburger ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <ul className={`nav-links ${isMenuOpen ? 'show' : ''}`}>
-            {['Products', 'Applications', 'Fasteners', 'Resources'].map((text) => (
-              <li key={text} onClick={() => setIsMenuOpen(false)}>
-                {text}
-              </li>
-            ))}
+        {/* Added onClick for the logo */}
+        <div
+          onClick={handleBackToMenu}
+          style={{ cursor: 'pointer' }}
+          role="button"
+          aria-label="Back to top menu"
+        >
+          <img src={logo} className="App-logo" alt="Monarch Metal Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li>Products</li>
+            <li>Applications</li>
+            <li>Fasteners</li>
+            <li>Resources</li>
           </ul>
         </nav>
       </div>

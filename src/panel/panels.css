@@ -437,7 +437,6 @@
     padding: 2rem;
     gap: 1rem;
     min-height: 25rem;
-    border: solid red;
   }
   .panel-info h3 {
     font-size: 1.8rem;
@@ -542,7 +541,7 @@
   }
   .panel-image {
     width: 100%;
-    height: 18rem; /* Increased image size fix */
+    height: 10rem; /* Increased image size fix */
     padding: 0 !important;
     margin: 0 !important;
   }
@@ -559,11 +558,11 @@
 
   .panel-info a {
   font-size: 0.9rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   }
 
   .panel-image img{
-    height: 8rem;
+    height: 9rem;
     margin-bottom: 1rem;
   }
 
