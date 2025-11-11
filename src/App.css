@@ -297,7 +297,7 @@ body {
 /* --- Banner (Navigation) --- */
 .banner {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   /* Reduced padding slightly for smaller screens to save space */
   padding: 0.8rem 2rem; 
@@ -824,7 +824,7 @@ min-height: 100dvh;
 
   .banner {
     /* Set background on banner for mobile to ensure readability */
-    justify-content: space-between; 
+    justify-content: center; 
     padding: 0.2rem 0.8rem;
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
