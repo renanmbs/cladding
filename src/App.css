@@ -824,7 +824,7 @@ min-height: 100dvh;
 
   .banner {
     /* Set background on banner for mobile to ensure readability */
-    justify-content: center; 
+    justify-content: space-between; 
     padding: 0.2rem 0.8rem;
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
