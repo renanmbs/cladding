@@ -25,9 +25,8 @@ function App() {
 
   // Effect to close menu when a section is clicked (optional but good UX)
   useEffect(() => {
-    // Only close the menu if a section was clicked from the overlay
     if (lastClickedSection) {
-      setIsMenuOpen(false); 
+      setIsMenuOpen(false); // Close menu after an action
     }
   }, [lastClickedSection]);
 
@@ -78,10 +77,9 @@ const handleBackToMenu = useCallback(() => {
     <div className="App">
       {/* Banner */}
       <div className='banner' aria-label="Main Navigation">
-        {/* Logo Container for Fixed Positioning on Mobile */}
+        {/* Added onClick for the logo */}
         <div
           onClick={handleBackToMenu}
-          className='logo-container'
           style={{ cursor: 'pointer' }}
           role="button"
           aria-label="Back to top menu"
