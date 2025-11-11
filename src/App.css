@@ -612,6 +612,11 @@ min-height: 100dvh;
   width: var(--logo-height); /* square burger to match logo */
 }
 
+.App.no-fixed-background {
+  /* Overrides the background-attachment: fixed property defined in .App */
+  background-attachment: scroll !important; 
+}
+
 /* ========================================================================= */
 /* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
 /* ========================================================================= */

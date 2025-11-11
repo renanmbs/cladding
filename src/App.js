@@ -12,6 +12,7 @@ function App() {
   const [lastClickedSection, setLastClickedSection] = useState(null);
   // NEW STATE for Burger Menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const appRef = useRef(null);
 
   const panelsRef = useRef(null);
   const claddingRef = useRef(null);
@@ -58,23 +59,32 @@ function App() {
 
   // Scroll-to-top handler
 const handleBackToMenu = useCallback(() => {
-  if (menuRef.current) {
+  if (menuRef.current && appRef.current) {
+    // 1. ADD class to prevent background twitching
+    appRef.current.classList.add('no-fixed-background');
+    
+    // 2. Perform the smooth scroll
     menuRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   }
 
-  // Delay the reset to let scroll finish smoothly
+  // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
   setTimeout(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
-    setIsMenuOpen(false); // Ensure menu closes
+    setIsMenuOpen(false); 
+    
+    // 4. REMOVE class to restore fixed background
+    if (appRef.current) {
+        appRef.current.classList.remove('no-fixed-background');
+    }
   }, 600);
 }, []);
 
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       {/* Banner */}
       <div className='banner' aria-label="Main Navigation">
         {/* Added onClick for the logo */}
