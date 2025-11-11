@@ -531,21 +531,15 @@ min-height: 100dvh;
   position: relative;
   overflow: hidden;
 } 
-
 .burger-menu-button {
-  display: none; /* Hidden by default on desktop/tablet */
+  display: none; /* Correctly hidden by default */
   background: none;
   border: none;
   cursor: pointer;
   position: relative;
-  z-index: 1001; /* Must be above the banner and overlay */
-  width: 40px; 
-  height: 40px; 
-  /* Also add vertical centering for the lines */
-  display: flex; /* Although display: none is above, this is necessary */
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
+  z-index: 1001; 
+  width: 40px; /* Default desktop size */
+  height: 40px; /* Default desktop size */
 }
 
 .burger-icon-line {

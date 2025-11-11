@@ -548,7 +548,7 @@
   }
   .nav-arrow {
     font-size: 1.5rem; /* Make them slightly bigger to be clickable */
-    color: #c31d2a; /* Make them red so they are visible on the white card */
+    color: white; /* Make them red so they are visible on the white card */
     top: 50%; 
     transform: translateY(-50%); /* Re-center them vertically */
   }
