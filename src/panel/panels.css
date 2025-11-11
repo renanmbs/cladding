@@ -469,18 +469,7 @@
 }
 
 .panel-info a {
-  display: block;
-  width: fit-content;
   padding: 0rem 0;
-  font-size: 1.05rem;
-  color: #c31d2a;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  transition: color 0.3s ease;
-  position: relative;
-  align-self: center;
-  overflow: hidden;
-  text-decoration: none;
 }
 }
 
@@ -523,6 +512,7 @@
     height: 25rem; /* Increased image size fix */
     margin-top: 1.5rem;
   }
+
   .nav-arrow {
     font-size: 1.8rem; /* Increased arrow size fix */
     top: 50%;
@@ -534,7 +524,7 @@
   
   /* --- Panels / Fasteners Component (Mobile Optimization) --- */
   .panel-card {
-    padding: 1rem 0; /* Remove side padding */
+    padding: 1rem 1rem; /* Remove side padding */
     transition: none;
     transform: none;
   }
@@ -543,27 +533,46 @@
     box-shadow: none;
   }
   .panel-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
   }
   .panel-info p.main-description {
-    font-size: 0.95rem;
-    margin: 0.5rem 0;
+    font-size: 1rem;
+    margin: 0 0 0.9rem 0;
   }
   .panel-image {
     width: 100%;
     height: 18rem; /* Increased image size fix */
+    padding: 0 !important;
+    margin: 0 !important;
   }
   .nav-arrow {
-    font-size: 1.5rem;
-    top: 40%;
+    font-size: 1rem;
+    /* top: 40%; */
   }
   .nav-arrow.left {
-    left: -1vw; /* Arrow placement fix */
+    left: -6vw;
   }
   .nav-arrow.right {
-    right: -1vw; /* Arrow placement fix */
+    right: -6vw;
   }
+
+  .panel-info a {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  }
+
+  .panel-image img{
+    height: 15rem;
+    margin-bottom: 1rem;
+  }
+
+  .panel-info p.key-features-paragraph {
+  margin: 0.5rem 1rem;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
 }
 
 

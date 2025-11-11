@@ -623,17 +623,23 @@ body {
 @media (max-width: 480px) {
   .banner {
     /* Hide the navigation links completely to save space */
-    justify-content: center; 
+    justify-content:space-between; 
     padding: 0.5rem 0.8rem;
   }
   
   .banner nav {
-    /* Make the entire navigation block disappear */
-    display: none; 
+    font-size: 1.5rem;
+  }
+
+  .App nav ul {
+    /* Adjust navigation to fit tablets */
+    gap: 0.5rem;
+    font-size: 0.59rem;
+    font-weight: 700;
   }
 
   .App-logo {
-    height: 3rem; 
+    height: 1.5rem; 
   }
 
   .spacer p {
@@ -642,7 +648,7 @@ body {
   }
 
   .logo2 {
-    height: 10rem;
+    height: 6rem;
     margin-bottom: 1rem !important;
   }
 
@@ -657,11 +663,12 @@ body {
   }
 
   .back-button-wrapper {
-    bottom: 2rem; /* Move back button up slightly */
+    bottom: 0.5rem; /* Move back button up slightly */
   }
 
   .back-button {
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
+
   }
 }

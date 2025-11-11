@@ -64,16 +64,11 @@ h2 {
 
 .section2 {
   width: 100%;
-  /* Removed fixed height: 100vh here and will set it on the App.css screen container */
-  /* If you want this component to take up at least 100vh when rendered,
-     ensure the parent `.screen` container in App.css is used, 
-     but keeping the min-height just in case */
   min-height: 100vh; 
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Add padding to prevent content from touching the edges */
   padding: 2rem 1rem; 
   box-sizing: border-box;
 }
@@ -87,10 +82,8 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  /* Ensure wrapping is enabled for responsiveness */
   flex-wrap: wrap; 
   width: 100%;
-  /* Max width added to prevent cards from spreading too far on huge monitors */
   max-width: 1400px; 
 }
 
@@ -99,17 +92,10 @@ h2 {
   color: #323b41;
   border-radius: 1rem;
   padding: 1rem;
-  
-  /* --- RESPONSIVE FIXES: Use flexible dimensions for card size --- */
-  /* Replaced fixed width with flex-basis to allow wrapping and sizing */
-  flex: 0 1 25rem; /* Allow growing 0, shrinking 1, base width 25rem */
-  max-width: 25rem; /* Maintain the desired maximum width */
-
-  /* Replace fixed height with min-height and dynamic sizing */
+  flex: 0 1 25rem; 
+  max-width: 25rem; 
   min-height: 30rem; 
   height: auto; 
-  /* ----------------------------------------------------------------- */
-
   text-align: center;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
               box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
@@ -122,16 +108,14 @@ h2 {
 
 .cladding-card img {
   max-height: none; 
-  /* We keep this block, but ensure max-height is only applied strategically */
   width: 100%;
-  height: auto; /* Important: Use auto height for responsive images */
+  height: auto;
   object-fit: contain;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .img2{
-  /* Ensuring full coverage for specific images */
   object-fit: cover !important; 
 }
 
@@ -145,8 +129,6 @@ h2 {
   font-weight: 500;
   line-height: 1.5;
 }
-
-/* Divider styles (assuming they are from cladding.css) */
 
 /* ========================================================================= */
 /* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
@@ -171,7 +153,6 @@ h2 {
   }
 }
 
-
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
 @media (max-width: 768px) {
   .divider-container {
@@ -189,7 +170,6 @@ h2 {
   }
 
   .cladding-card {
-    /* Cards now take up full width minus padding for a stacked look */
     flex: 0 1 30%; 
     max-width: 30%;
     max-height: 25rem;
@@ -232,11 +212,9 @@ h2 {
   }
 
   .cladding-card {
-    /* Take up full viewport width (minus margins/padding) */
     flex: 0 1 80%; 
     max-width: 80%; 
     padding: 1rem 0.8rem;
-    /* Ensure hover scale doesn't push the card off the screen */
     transition: none; 
     min-height: auto;
     max-height: 15rem;
@@ -246,12 +224,13 @@ h2 {
     transform: none;
   }
   
-  .cladding-card img {
-    max-height: 6rem; /* Smallest image height for phones */
+  .cladding-card img, .img2 {
+    height: 6rem; /* Smallest image height for phones */
+    margin: 0 0 0.2rem 0!important;
   }
 
   .cladding-card p{
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
   line-height: 1;
 }
@@ -259,6 +238,6 @@ h2 {
 .cladding-card h3{
   color: #c31d2a;
   font-size: 1.3rem;
-  margin: 0;
+  margin: 0 !important;
 }
 }
