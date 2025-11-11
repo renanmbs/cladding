@@ -641,6 +641,11 @@ min-height: 100dvh;
      min-height: 100vh;
 min-height: 100dvh;
   }
+
+  .panels-screen {
+    /* Matches the old scroll-padding-top value */
+    scroll-margin-top: 5.5rem; 
+  }
 }
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
@@ -703,6 +708,11 @@ min-height: 100dvh;
    .back-button-wrapper {
     bottom: 0.5rem; /* was 2rem */
     /* margin-bottom: 1rem; */
+  }
+
+  .panels-screen {
+    /* Matches the old scroll-padding-top value */
+    scroll-margin-top: 5rem;
   }
 }
 
@@ -786,8 +796,10 @@ min-height: 100dvh;
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
   }
-  
-  .scroll-container {
-scroll-padding-top: 2.5rem;
+
+  .panels-screen {
+    /* Matches the old scroll-padding-top value */
+    scroll-margin-top: 2.5rem;
   }
+  
 }
