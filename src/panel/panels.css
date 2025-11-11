@@ -553,10 +553,10 @@
     transform: translateY(-50%); /* Re-center them vertically */
   }
  .nav-arrow.left {
-    left: -1rem;
+    left: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
   }
   .nav-arrow.right {
-    right: -1rem;
+    right: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
   }
 
   .panel-info a {
