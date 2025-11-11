@@ -783,8 +783,8 @@ min-height: 100dvh;
     /* Set background on banner for mobile to ensure readability */
     justify-content: space-between; 
     padding: 0.2rem 0.8rem;
-    background: #cccccc6c; 
-    backdrop-filter: blur(15px);   
+    /* background: #cccccc6c; 
+    backdrop-filter: blur(15px);    */
   }
   
 }
