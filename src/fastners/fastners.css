@@ -116,7 +116,7 @@ white: #ffffff */
   .text {
     /* Further reduction for mobile */
     font-size: 0.9rem; 
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
   }
 
   .line {

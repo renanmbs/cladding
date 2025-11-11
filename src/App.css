@@ -273,11 +273,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  background-image: url('./image/Landing Page background blue.png');
+  /* background-image: url('./image/Landing Page background blue.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
   /* overflow: hidden; */
   /* overflow-x: hidden; */
   background-color: black;
@@ -714,6 +714,18 @@ min-height: 100dvh;
     /* Matches the old scroll-padding-top value */
     scroll-margin-top: 5rem;
   }
+
+   .burger-menu-button {
+    width: 3.5rem; /* match tablet logo height */
+    height: 3.5rem;
+  }
+
+  .burger-icon-line {
+    width: 70%;
+    height: 0.2rem;
+    margin: 0.3rem 0;
+  }
+
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
@@ -787,6 +799,14 @@ min-height: 100dvh;
   /* SHOW THE BURGER BUTTON */
   .burger-menu-button {
     display: block;
+    width: 1.5rem; /* match .App-logo height */
+    height: 1.5rem;
+  }
+
+  .burger-icon-line {
+    width: 70%;       /* relative to button */
+    height: 0.15rem;  /* thinner line for small buttons */
+    margin: 0.25rem 0;
   }
 
   .banner {
