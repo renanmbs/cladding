@@ -654,8 +654,9 @@ body {
 
   .start-buttons {
     padding: 1rem 0.8rem;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 95%;
+    margin-top: 1rem;
   }
 
   .start-buttons h2 {
@@ -669,7 +670,6 @@ body {
   .back-button {
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
-
   }
   
 }

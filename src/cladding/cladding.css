@@ -212,12 +212,12 @@ h2 {
   }
 
   .cladding-card {
-    flex: 0 1 80%; 
-    max-width: 80%; 
+    flex: 0 1 40%; 
+    max-width: 40%; 
     padding: 1rem 0.8rem;
     transition: none; 
     min-height: auto;
-    max-height: 10rem;
+    max-height: 18rem;
   }
   
   .cladding-card:hover {
@@ -232,12 +232,13 @@ h2 {
   .cladding-card p{
   font-size: 0.9rem;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .cladding-card h3{
   color: #c31d2a;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0 !important;
 }
 }

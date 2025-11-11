@@ -100,9 +100,9 @@
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {
   .divider-container {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    padding: 5px;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0px 0;
+    height: 2rem;
   }
 
   .text {
@@ -116,7 +116,7 @@
   }
 
   .fastener-image{
-    width: 20rem !important;
-    height: 15rem !important;
+    width: 21rem !important;
+    height: 9rem !important;
   }
 }
