@@ -34,7 +34,7 @@ export default function Cladding() {
         <div className="cladding-card card2">
           <img src="Cladding/Horizontal WB Thumbnail (1).png" alt="Thermal Wall Brackets" />
           <h3>THERMAL WALL BRACKETS</h3>
-          <p>
+          <p className='c2'>
             Used to support wind and dead loads of whole systems. Our wall brackets can be fabricated to achieve anywhere from a 2° - 65° projection in vertical or horizontal orientation.
           </p>
         </div>

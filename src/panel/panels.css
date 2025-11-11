@@ -552,12 +552,12 @@
     top: 50%; 
     transform: translateY(-50%); /* Re-center them vertically */
   }
- .nav-arrow.left {
-    left: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
+ /* .nav-arrow.left {
+    left: -1rem;
   }
   .nav-arrow.right {
-    right: -6vw; /* Pushes the arrow 0.5rem *inside* the card wrapper */
-  }
+    right: -1rem;
+  } */
 
   .panel-info a {
   font-size: 0.9rem;
