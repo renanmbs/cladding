@@ -787,4 +787,7 @@ min-height: 100dvh;
     backdrop-filter: blur(15px);    */
   }
   
+  .scroll-container {
+scroll-padding-top: 2.5rem;
+  }
 }
