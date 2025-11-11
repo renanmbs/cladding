@@ -217,7 +217,7 @@ h2 {
     padding: 1rem 0.8rem;
     transition: none; 
     min-height: auto;
-    max-height: 15rem;
+    max-height: 10rem;
   }
   
   .cladding-card:hover {
