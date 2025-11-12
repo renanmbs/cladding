@@ -551,19 +551,23 @@ min-height: 100dvh;
   margin: 4px 0;
   transition: all 0.3s ease;
   border-radius: 2px;
+  z-index: 1001; 
 }
 
 /* 🍔 Burger Animation (The X button) */
 .burger-menu-button.open .burger-icon-line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
+  z-index: 1001; 
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(2) {
   opacity: 0;
+  z-index: 1001; 
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+  z-index: 1001; 
 }
 
 
@@ -578,7 +582,7 @@ min-height: 100dvh;
 min-height: 100dvh;
   background-color: rgba(0, 0, 0, 0.407); /* Semi-transparent dark background */
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -610,6 +614,7 @@ min-height: 100dvh;
 .App-logo, .burger-menu-button {
   height: var(--logo-height);
   width: var(--logo-height); /* square burger to match logo */
+  z-index: 1001; 
 }
 
 .App.no-fixed-background {
@@ -832,7 +837,8 @@ min-height: 100dvh;
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 4.5rem;
+    scroll-margin-top: 4rem;
+    border: solid red;
   }
   
   .App{
