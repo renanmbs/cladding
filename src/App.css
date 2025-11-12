@@ -832,7 +832,7 @@ min-height: 100dvh;
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 4.5rem;
   }
   
   .App{

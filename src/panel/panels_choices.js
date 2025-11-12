@@ -16,7 +16,7 @@ export const panelData = [
   {
     title: "GFRC & Fiber Cement/Concrete ",
     description:
-      "GFRC panels are composites of Portland cement, fine aggregate, water, acrylic copolymer, and alkali-resistant glass fiber. They're primarily used for exterior building façades and architectural precast concrete. It is a composite of materials such as Portland cement, fine aggregate, water, acrylic copolymer, alkali-resistant glass fiber reinforcement, and other additives. Fiber cement is a composite material made of cement reinforced with cellulose fibers.",
+      "GFRC panels are composites of Portland cement, fine aggregate, water, acrylic copolymer, and alkali-resistant glass fiber. They're primarily used for exterior building façades and architectural precast concrete. Fiber cement is a composite material made of cement reinforced with cellulose fibers.",
     image: "/Panel/GFRC.png",
     link: "",
   },
