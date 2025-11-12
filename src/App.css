@@ -576,7 +576,7 @@ min-height: 100dvh;
   height: 100vh;
   height: 100dvh;
 min-height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent dark background */
+  background-color: rgba(0, 0, 0, 0.407); /* Semi-transparent dark background */
   backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex;
@@ -830,7 +830,7 @@ min-height: 100dvh;
     backdrop-filter: blur(15px);    */
   }
 
-  .panels-screen {
+  .scroll-container {
     /* Matches the old scroll-padding-top value */
     scroll-margin-top: 5rem;
   }
