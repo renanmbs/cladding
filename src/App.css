@@ -490,7 +490,7 @@ body {
 
 .back-button {
   margin-top: 2rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1em;
   font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.2);
   color: var(--text-white);
@@ -800,6 +800,7 @@ body {
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
+    
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
   }
@@ -826,11 +827,12 @@ body {
   }
 
   .spacer {
-    min-height: 95vh;
-    max-height: 95vh;
-    min-height: 95dvh;
-    max-height: 95dvh;
-    padding-top: 3.5rem;
+    min-height: 92vh;
+    max-height: 94vh;
+    min-height: 92dvh;
+    max-height:94dvh;
+    border: solid pink;
+    margin: 0 !important;
   }
 
   .logo2 {
@@ -899,6 +901,7 @@ body {
   .scroll-container {
     /* Matches the old scroll-padding-top value */
     scroll-margin-top: 5.5rem;
+    scroll-behavior: smooth;
   }
 
   .App {

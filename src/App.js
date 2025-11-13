@@ -66,13 +66,13 @@ function App() {
 const handleBackToMenu = useCallback(() => {
   if (menuRef.current && appRef.current) {
     // 1. ADD class to prevent background twitching
-    appRef.current.classList.add('no-fixed-background');
+    // appRef.current.classList.add('no-fixed-background');
     
     // 2. Perform the smooth scroll
-    menuRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    // menuRef.current.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start'
+    // });
   }
 
   // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
@@ -85,7 +85,7 @@ const handleBackToMenu = useCallback(() => {
     
     // 4. REMOVE class to restore fixed background
     if (appRef.current) {
-        appRef.current.classList.remove('no-fixed-background');
+        // appRef.current.classList.remove('no-fixed-background');
     }
   }, 600);
 }, []);
@@ -207,7 +207,7 @@ const handleBackToMenu = useCallback(() => {
                 className='back-button'
                 aria-label="Back to main product selection"
               >
-                ↑ Back to Menu
+                ↑
               </button>
             </div>
           </motion.section>
