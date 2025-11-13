@@ -863,6 +863,8 @@ body {
     max-height: 95vh;
     min-height: 95dvh;
     max-height: 95dvh;
+    justify-content: flex-start;
+    padding-top: 5rem;
    border: solid pink; 
   }
 

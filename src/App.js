@@ -149,6 +149,7 @@ const handleBackToMenu = useCallback(() => {
         
       {/* Spacer + Start Buttons */}
       <div className='spacer' ref={menuRef}>
+        
         <img src={logo2} className="logo2" alt="Monarch Cladding Systems" />
         <p>Cladding and Rainscreen Systems</p>
 
