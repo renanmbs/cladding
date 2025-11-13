@@ -195,6 +195,7 @@ h2 {
 @media (max-width: 480px) {
   .section2 {
     padding: 1rem 0.5rem;
+    min-height: 70vh; 
   }
 
   .text h3 {
@@ -217,7 +218,7 @@ h2 {
   
   .card2{
     /* padding: 1rem 0rem; */
-    max-height: 13rem;
+    max-height: 12rem;
     max-width: 100%; 
     max-width: 95%; 
   }

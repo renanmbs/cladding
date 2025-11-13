@@ -13,9 +13,6 @@ const structureDescription = (description) => {
 
   // 1. Main Description: Summarize aggressively for fixed height
   let main = sentences.slice(0, 1).join(". ") + (sentences.length > 0 ? "." : "");
-  if (main.length > 200) {
-      main = main.substring(0, 200).trim() + "...";
-  }
 
   // 2. Features/Details: Summarize second part
   const detailSentences = sentences.slice(1);

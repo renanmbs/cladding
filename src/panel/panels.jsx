@@ -15,16 +15,10 @@ const structureDescription = (description) => {
 
   // 1. Main Description: Use the first sentence or up to the first 40 words.
   let main = sentences.slice(0, 1).join(". ") + (sentences.length > 0 ? "." : "");
-  if (main.length > 200) {
-      main = main.substring(0, 200).trim() + "...";
-  }
 
   // 2. Features/Details (The rest of the text, summarized)
   const detailSentences = sentences.slice(1);
   let features = detailSentences.slice(0, 2).join(". ") + (detailSentences.length > 1 ? "." : "");
-  if (features.length > 200) {
-      features = features.substring(0, 200).trim() + "...";
-  }
 
   return {
     main: main || "No main description available.",
