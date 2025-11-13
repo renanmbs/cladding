@@ -863,6 +863,7 @@ body {
     max-height: 95vh;
     min-height: 95dvh;
     max-height: 95dvh;
+   border: solid pink; 
   }
 
   .logo2 {
