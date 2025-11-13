@@ -823,7 +823,7 @@ body {
   .screen {
     width: 100%;
   scroll-snap-align: start;
-  height: 100vh;
+  height: 85vh;
   min-height: 85vh;
   display: flex;
   justify-content: flex-start;
@@ -835,7 +835,6 @@ body {
   position: relative;
   overflow: hidden;
   border: solid blue;
-  padding-top:5rem
 }
 
   .banner nav {
