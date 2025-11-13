@@ -427,14 +427,15 @@
     width: 90%; /* Let the image fill its container */
     margin-bottom: 0;
     border: solid 1px #c31d2a;
-    object-fit: contain; /* Use CONTAIN to prevent image stretching/cropping */
+    /* 💥 CRITICAL FIX: Changed from 'cover' to 'contain' */
+    object-fit: contain; 
   }
 
-  /* 🚫 REMOVED conflicting height/width overrides on the image element itself */
+  /* 🚫 Fastener-specific image class relies on general .panel-image img settings now */
   .fastener-image{
-    height: 100%; /* Ensure it takes full height of wrapper */
-    width: 100%; /* Ensure it takes full width of wrapper */
-    object-fit: contain; /* Ensure it fits the wrapper height */
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover; 
   }
 
   .cards2{
@@ -456,4 +457,13 @@
   .line {
     height: 1px;
   }
+
+
+ .nav-arrow.left {
+    left: -6vw; 
+  }
+  .nav-arrow.right {
+    right: -6vw; 
+  }
+
 }

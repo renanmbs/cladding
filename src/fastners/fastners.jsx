@@ -20,9 +20,6 @@ const structureDescription = (description) => {
   // 2. Features/Details: Summarize second part
   const detailSentences = sentences.slice(1);
   let features = detailSentences.slice(0, 2).join(". ") + (detailSentences.length > 1 ? "." : "");
-  if (features.length > 200) {
-      features = features.substring(0, 200).trim() + "...";
-  }
 
   return {
     main: main || "No main description available.",
