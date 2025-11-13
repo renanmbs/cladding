@@ -800,8 +800,24 @@ body {
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
-    /* background: #cccccc6c; 
-    backdrop-filter: blur(15px);    */
+  /* Smooth animation on scroll */
+  transition:
+    backdrop-filter 0.4s ease,
+    background-color 0.4s ease,
+    box-shadow 0.4s ease; 
+     background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: none; /* disable heavy blur */
+    -webkit-backdrop-filter: none;
+    background-blend-mode: normal; /* prevents soft tint blending */
+  }
+
+  .banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.714);
+
+    z-index: -1;
   }
 
   .screen {
