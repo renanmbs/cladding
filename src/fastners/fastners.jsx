@@ -3,16 +3,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./fastners.css";
 import { fastenerData } from "./fastners_choices";
 
-// --- Utility to structure a single description string ---
+// --- Utility to structure a single description string (Updated for brevity/fixed height) ---
 const structureDescription = (description) => {
-  if (!description) return { main: "", features: "", detail: "" };
+  if (!description) return { main: "", features: "" }; // Removed 'detail'
 
-  const sentences = description.split(/\. *|; */g).filter((s) => s.trim().length > 0);
-  const main = sentences.slice(0, 2).join(". ") + (sentences.length > 0 ? "." : "");
-  const features = sentences.slice(2, 5).join(". ") + (sentences.length > 2 ? "." : "");
-  const detail = sentences.slice(5).join(". ") + (sentences.length > 5 ? "." : "");
+  // Split description by sentences/phrases
+  // eslint-disable-next-line no-useless-escape
+  const sentences = description.split(/(\. *|; *)/g).filter(s => s.trim().length > 0 && !s.match(/[\.;]/));
 
-  return { main, features, detail };
+  // 1. Main Description: Summarize aggressively for fixed height
+  let main = sentences.slice(0, 1).join(". ") + (sentences.length > 0 ? "." : "");
+  if (main.length > 200) {
+      main = main.substring(0, 200).trim() + "...";
+  }
+
+  // 2. Features/Details: Summarize second part
+  const detailSentences = sentences.slice(1);
+  let features = detailSentences.slice(0, 2).join(". ") + (detailSentences.length > 1 ? "." : "");
+  if (features.length > 200) {
+      features = features.substring(0, 200).trim() + "...";
+  }
+
+  return {
+    main: main || "No main description available.",
+    features: features || "Key features not specified."
+  };
 };
 
 export default function Fasteners() {

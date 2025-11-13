@@ -1,31 +1,34 @@
 // Panels.js (Revised)
 
-import React, { useState, useEffect, useMemo } from "react"; // Added useMemo
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./panels.css";
 import { panelData } from "./panels_choices";
 
-// --- Utility Function to Structure the Description ---
+// --- Utility Function to Structure the Description (Revised for brevity) ---
 const structureDescription = (description) => {
-  if (!description) return { main: "", features: [], detail: "" };
+  if (!description) return { main: "", features: "" };
 
-  const sentences = description.split(/\. *|; */g).filter(s => s.trim().length > 0);
+  // Split description by sentences/phrases
+  // eslint-disable-next-line no-useless-escape
+  const sentences = description.split(/(\. *|; *)/g).filter(s => s.trim().length > 0 && !s.match(/[\.;]/));
 
-  // 1. Main Description: Use the first one or two sentences.
-  const main = sentences.slice(0, 2).join(". ") + (sentences.length > 0 ? "." : "");
+  // 1. Main Description: Use the first sentence or up to the first 40 words.
+  let main = sentences.slice(0, 1).join(". ") + (sentences.length > 0 ? "." : "");
+  if (main.length > 200) {
+      main = main.substring(0, 200).trim() + "...";
+  }
 
-  // 2. Features/Details (The rest of the text)
-  const detailSentences = sentences.slice(2);
-
-  // Split the remaining text into three sections for visual flow:
-  // For simplicity, we'll split the remaining text into 3 parts.
-  const featureCandidate = detailSentences.slice(0, 3).join(". ") + (detailSentences.length > 0 ? "." : "");
-  const detailCandidate = detailSentences.slice(3).join(". ") + (detailSentences.length > 3 ? "." : "");
+  // 2. Features/Details (The rest of the text, summarized)
+  const detailSentences = sentences.slice(1);
+  let features = detailSentences.slice(0, 2).join(". ") + (detailSentences.length > 1 ? "." : "");
+  if (features.length > 200) {
+      features = features.substring(0, 200).trim() + "...";
+  }
 
   return {
-    main: main,
-    features: featureCandidate,
-    detail: detailCandidate
+    main: main || "No main description available.",
+    features: features || "Key features not specified."
   };
 };
 
@@ -87,15 +90,12 @@ export default function Panels() {
                 {structuredInfo.main}
               </p>
 
-              {/* Display a dynamic bulleted list (using the middle part of the split) */}
-              {/* NOTE: If the middle part is just text, it's better to show it as a paragraph too */}
+              {/* Display the key features paragraph */}
               {structuredInfo.features && (
                 <p className="key-features-paragraph">
                   {structuredInfo.features}
                 </p>
               )}
-
-              {/* The longer, detailed composition info */}
 
               <a href={link}>SEE PRODUCTS FOR THIS PANEL →</a>
             </div>
