@@ -914,7 +914,6 @@ body {
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 1rem;
     align-items: center;
   }
 
