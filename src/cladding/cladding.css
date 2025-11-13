@@ -195,7 +195,7 @@ h2 {
 @media (max-width: 480px) {
   .section2 {
     padding: 1rem 0.5rem;
-    min-height: 70vh; 
+    min-height: 80vh; 
   }
 
   .text h3 {
