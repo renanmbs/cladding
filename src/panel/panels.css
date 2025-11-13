@@ -196,6 +196,35 @@
   background: #c31d2a;
 } 
 
+.divider-container {
+  display: flex;
+  align-items: center;
+  width: 80%; 
+  max-width: 1200px;
+  margin: 1rem auto 1rem auto;
+  padding: 2px;
+  justify-content: center; 
+}
+
+.line {
+  flex-grow: 1;
+  height: 3px;
+  background: linear-gradient(to right, #c31d2a 10%, #cccccc);
+}
+
+.divider-container .line:last-child {
+  background: linear-gradient(to left, #c31d2a 10%, #cccccc);
+}
+
+.text {
+  padding: 0 1rem;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.3rem; 
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
 /* ========================================================================= */
 /* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
 /* ========================================================================= */
@@ -239,6 +268,18 @@
 
 .panel-info a {
   padding: 0rem 0;
+}
+
+  .divider-container {
+    width: 100%;
+  }
+
+  .text {
+    font-size: 1.1rem;
+  }
+  
+  .panel-image img {
+  object-fit: cover !important;
 }
 }
 
@@ -286,6 +327,28 @@
     font-size: 1.8rem; /* Increased arrow size fix */
     top: 50%;
   }
+
+  .divider-container {
+    width: 100%;
+    margin: 0.3rem auto 0.3rem auto;
+  }
+
+  .text {
+    /* Allow text to wrap if it's too long for the smaller screen */
+    white-space: normal; 
+    text-align: center;
+    font-size: 1rem; 
+  }
+
+  /* Reduce thickness of divider lines to match smaller text */
+  .line {
+    height: 2px;
+  }
+
+  .fastener-image{
+    height: 25rem !important;
+    width: 36rem !important;
+  }
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
@@ -296,13 +359,15 @@
     padding: 1rem 1rem; /* Remove side padding */
     transition: none;
     transform: none;
+    height: auto; 
+    min-height: auto; 
   }
   .panel-card:hover {
     transform: none;
     box-shadow: none;
   }
   
-  /* 🚀 CHANGE: Fixed height for panel info container */
+  /* 🚀 FIXED HEIGHT: 300px for info */
   .panel-info {
     /* Set a standard height for the info area */
     height: 300px; 
@@ -321,7 +386,7 @@
     font-size: 0.9rem;
     margin: 0 0 0.5rem 0;
     line-height: 1.3;
-    /* 🚀 CHANGE: Force content into fixed height with ellipsis */
+    /* 🚀 Line clamping */
     display: -webkit-box;
     -webkit-line-clamp: 4; /* Limit to 4 lines */
     -webkit-box-orient: vertical;
@@ -335,7 +400,7 @@
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
     text-align: left;
-    /* 🚀 CHANGE: Limit key feature lines */
+    /* 🚀 Line clamping */
     -webkit-line-clamp: 5; /* Limit to 5 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -349,7 +414,7 @@
   margin-bottom: 0; /* Tighten space around the link */
   }
 
-  /* 🚀 CHANGE: Fixed image height */
+  /* 🚀 FIXED HEIGHT: 200px for image wrapper */
   .panel-image {
     width: 100%;
     height: 200px; /* Standard, generous height for the image */
@@ -358,24 +423,37 @@
   }
 
   .panel-image img{
-    height: 100%;
+    height: 100%; /* Image takes 100% of the 200px wrapper height */
     width: 90%; /* Let the image fill its container */
     margin-bottom: 0;
     border: solid 1px #c31d2a;
-    object-fit: contain; /* Ensure image isn't cropped */
+    object-fit: contain; /* Use CONTAIN to prevent image stretching/cropping */
   }
 
-  .nav-arrow {
-    font-size: 1.5rem;
-    color: #c31d2a; /* Make them red so they are visible on the white card */
-    top: 50%; 
-    transform: translateY(-50%);
-  }
- .nav-arrow.left {
-    left: -2vw; 
-  }
-  .nav-arrow.right {
-    right: -2vw; 
+  /* 🚫 REMOVED conflicting height/width overrides on the image element itself */
+  .fastener-image{
+    height: 100%; /* Ensure it takes full height of wrapper */
+    width: 100%; /* Ensure it takes full width of wrapper */
+    object-fit: contain; /* Ensure it fits the wrapper height */
   }
 
+  .cards2{
+    width: 90% !important;
+  }
+  
+  .divider-container {
+    margin: 1rem 0.5rem 0.3rem 0.5rem;
+    padding: 0px 0;
+    height: 2rem;
+  }
+
+  .text {
+    /* Further reduction for mobile */
+    font-size: 0.9rem; 
+    padding: 0 0.2rem;
+  }
+
+  .line {
+    height: 1px;
+  }
 }
