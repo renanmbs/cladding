@@ -866,7 +866,8 @@ body {
   }
 
   .back-button-wrapper {
-    align-items: start;
+    border: solid green;
+    bottom: 0;
     /* Move back button up slightly */
   }
 
