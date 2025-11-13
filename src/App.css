@@ -250,6 +250,7 @@ body {
   box-sizing: border-box;
   position: relative;
 }  */
+
 :root {
   --primary-red: #612d31;
   --secondary-red: #c31d2a;
@@ -258,15 +259,19 @@ body {
   --bg-dark-overlay: rgba(0, 0, 0, 0.7);
   --bg-light-blur: rgba(255, 255, 255, 0.1);
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease-in-out */
+  --transition-duration: 0.6s; /* Standardized duration */
 }
 
-html, body {
+html,
+body {
   background-color: #000;
   overscroll-behavior: none;
 }
 
 body {
-  overflow-y: auto; /* but locked to 'hidden' when menu is open */
+  overflow-y: auto;
+  /* but locked to 'hidden' when menu is open */
 }
 
 body {
@@ -292,7 +297,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-} 
+}
 
 /* --- Banner (Navigation) --- */
 .banner {
@@ -300,7 +305,7 @@ body {
   justify-content: space-between;
   align-items: center;
   /* Reduced padding slightly for smaller screens to save space */
-  padding: 0.8rem 2rem; 
+  padding: 1rem 2rem;
   color: var(--text-white);
   position: sticky;
   top: 0;
@@ -309,9 +314,10 @@ body {
 
 .App-logo {
   /* Base size */
-  height: 5rem; 
+  height: 5rem;
   transition: transform 0.3s ease;
 }
+
 .App-logo:hover {
   transform: scale(1.05);
 }
@@ -325,7 +331,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   /* Slightly smaller gap for smaller laptops (default) */
-  gap: 2rem; 
+  gap: 2rem;
 }
 
 .App nav ul li {
@@ -334,7 +340,7 @@ body {
   padding: 0.5rem 0;
   transition: color 0.3s ease;
   /* Ensure text doesn't wrap oddly */
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .App nav ul li::after {
@@ -354,7 +360,7 @@ body {
 
 .App nav ul li:hover::after {
   width: 100%;
-} 
+}
 
 /* --- Hero Section (Spacer) --- */
 
@@ -365,34 +371,34 @@ body {
   justify-content: center;
   flex-grow: 1;
   /* Base padding */
-  padding: 0 3rem; 
+  padding: 0 3rem;
   color: var(--text-white);
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
   height: 100dvh;
-min-height: 100dvh;
+  min-height: 100dvh;
 }
 
 .spacer p {
   /* Base font size */
-  font-size: 3rem; 
+  font-size: 3rem;
   text-transform: uppercase;
   margin: 0;
   font-weight: 200;
   /* Use a percentage for max-width to be responsive */
-  max-width: 85%; 
+  max-width: 85%;
   text-align: center;
   letter-spacing: 2px;
 }
 
 .logo2 {
   /* Base size */
-  height: 18rem; 
+  height: 18rem;
   width: auto;
   margin-bottom: 2.2rem !important;
-} 
+}
 
 /* --- Start Buttons --- */
 .start-buttons {
@@ -409,7 +415,7 @@ min-height: 100dvh;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   /* Added a max-width to prevent it from getting too wide on huge screens */
-  max-width: 600px; 
+  max-width: 600px;
 }
 
 .start-buttons h2 {
@@ -427,7 +433,7 @@ min-height: 100dvh;
   flex-direction: row;
   gap: 1.5rem;
   /* Allow wrapping on smaller screens if needed */
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -444,7 +450,7 @@ min-height: 100dvh;
   font-weight: 600;
   letter-spacing: 1px;
   /* Added min-width for button consistency */
-  min-width: 150px; 
+  min-width: 150px;
 }
 
 .choices button:hover {
@@ -462,8 +468,15 @@ min-height: 100dvh;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .back-button-wrapper {
@@ -472,8 +485,8 @@ min-height: 100dvh;
   display: flex;
   justify-content: center;
   width: 100%;
-  z-index: 10;
-} 
+  z-index: 8;
+}
 
 .back-button {
   margin-top: 2rem;
@@ -495,13 +508,13 @@ min-height: 100dvh;
   background: var(--primary-red);
   border-color: var(--primary-red);
   transform: scale(1.05);
-} 
+}
 
 /* --- Scroll/Screen Containers --- */
 .scroll-container {
   height: 100vh;
   height: 100dvh;
-min-height: 100dvh;
+  min-height: 100dvh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -512,34 +525,39 @@ min-height: 100dvh;
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
+
 .scroll-container {
   scrollbar-width: none;
   -ms-overflow-style: none;
-} 
+}
 
 .screen {
   scroll-snap-align: start;
-   height: 100vh;
+  height: 100vh;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   /* Base padding */
-  padding: 1.5rem 0rem; 
+  padding: 1.5rem 0rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-} 
+}
+
 .burger-menu-button {
-  display: none; /* default hidden */
-  width: 5rem;   /* match logo */
-  height: 5rem;  /* match logo */
+  display: none;
+  /* default hidden */
+  width: 5rem;
+  /* match logo */
+  height: 5rem;
+  /* match logo */
   background: none;
   border: none;
   cursor: pointer;
   position: relative;
-  z-index: 1001; 
+  z-index: 1001;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -549,16 +567,16 @@ min-height: 100dvh;
   height: 3px;
   background-color: var(--text-white);
   margin: 4px 0;
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) var(--transition-ease);
   border-radius: 2px;
-  z-index: 1001; 
+  z-index: 1001;
 }
 
 /* 🍔 Burger Animation (The X button) */
 /* 🍔 Burger Animation (The X button) */
 .burger-menu-button.open .burger-icon-line:nth-child(1) {
   /* FIX: Reset to 9px translation and 45 degrees rotation */
-  transform: translateY(13px) rotate(45deg); 
+  transform: translateY(10px) rotate(45deg);
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(2) {
@@ -567,7 +585,7 @@ min-height: 100dvh;
 
 .burger-menu-button.open .burger-icon-line:nth-child(3) {
   /* FIX: Reset to -9px translation and -45 degrees rotation */
-  transform: translateY(-14px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Mobile Navigation Overlay */
@@ -578,14 +596,24 @@ min-height: 100dvh;
   width: 100%;
   height: 100vh;
   height: 100dvh;
-min-height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.702); /* Semi-transparent dark background */
+  min-height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.702);
+  /* Semi-transparent dark background */
   backdrop-filter: blur(10px);
-  z-index: 10;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform var(--transition-duration) var(--transition-ease), 
+              opacity var(--transition-duration) var(--transition-ease);
+}
+
+.mobile-nav-overlay.open {
+  transform: translateX(0); /* Slide fully into view */
+  opacity: 1; /* Fade fully in */
 }
 
 .mobile-nav-overlay ul {
@@ -603,22 +631,36 @@ min-height: 100dvh;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 .mobile-nav-overlay ul li:hover {
   color: var(--primary-red);
 }
-∂
-.App-logo, .burger-menu-button {
+
+.mobile-nav-overlay.open ul li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-overlay.open ul li:nth-child(1) { transition-delay: 0.05s; }
+.mobile-nav-overlay.open ul li:nth-child(2) { transition-delay: 0.1s; }
+.mobile-nav-overlay.open ul li:nth-child(3) { transition-delay: 0.15s; }
+.mobile-nav-overlay.open ul li:nth-child(4) { transition-delay: 0.2s; }
+.mobile-nav-overlay.open ul li:nth-child(5) { transition-delay: 0.25s; }
+
+.burger-menu-button {
   height: var(--logo-height);
-  width: var(--logo-height); /* square burger to match logo */
-  z-index: 1001; 
+  width: var(--logo-height);
+  /* square burger to match logo */
+  z-index: 1001;
 }
 
 .App.no-fixed-background {
   /* Overrides the background-attachment: fixed property defined in .App */
-  background-attachment: scroll !important; 
+  background-attachment: scroll !important;
 }
 
 /* ========================================================================= */
@@ -630,21 +672,25 @@ min-height: 100dvh;
   .banner {
     padding: 0.6rem 1.5rem;
   }
-  
+
   .App-logo {
-    height: 4rem; /* Slightly smaller logo */
+    height: 4rem;
+    /* Slightly smaller logo */
   }
 
   .App nav ul {
-    gap: 1.5rem; /* Reduced navigation gap */
+    gap: 1.5rem;
+    /* Reduced navigation gap */
   }
 
   .spacer p {
-    font-size: 2.5rem; /* Reduced hero text size */
+    font-size: 2.5rem;
+    /* Reduced hero text size */
   }
 
   .logo2 {
-    height: 15rem; /* Reduced main logo size */
+    height: 15rem;
+    /* Reduced main logo size */
   }
 
   .choices button {
@@ -652,14 +698,14 @@ min-height: 100dvh;
     font-size: 1rem;
   }
 
-  .spacer{
-     min-height: 100vh;
-min-height: 100dvh;
+  .spacer {
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .panels-screen {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5.5rem; 
+    scroll-margin-top: 5.5rem;
   }
 }
 
@@ -667,11 +713,11 @@ min-height: 100dvh;
 @media (max-width: 768px) {
   .banner {
     /* Increase padding to ensure content isn't flush with edges */
-    padding: 0.5rem 1rem; 
+    padding: 0.5rem 1rem;
   }
 
   .App-logo {
-    height: 3.5rem; 
+    height: 3.5rem;
   }
 
   .App nav ul {
@@ -698,7 +744,8 @@ min-height: 100dvh;
 
   .start-buttons {
     padding: 1.5rem 1rem;
-    width: 90%; /* Take up more width */
+    width: 90%;
+    /* Take up more width */
     max-width: 500px;
   }
 
@@ -708,20 +755,22 @@ min-height: 100dvh;
 
   .choices {
     /* Force buttons to stack on top of each other */
-    flex-direction: column; 
+    flex-direction: column;
     gap: 1rem;
     width: 100%;
   }
-  
+
   .choices button {
     padding: 0.8rem;
     font-size: 1rem;
-    width: 100%; /* Full width for stacked buttons */
+    width: 100%;
+    /* Full width for stacked buttons */
     min-width: auto;
   }
 
-   .back-button-wrapper {
-    bottom: 0.5rem; /* was 2rem */
+  .back-button-wrapper {
+    bottom: 0.5rem;
+    /* was 2rem */
     /* margin-bottom: 1rem; */
   }
 
@@ -730,8 +779,9 @@ min-height: 100dvh;
     scroll-margin-top: 5rem;
   }
 
-   .burger-menu-button {
-    width: 3.5rem; /* match tablet logo height */
+  .burger-menu-button {
+    width: 3.5rem;
+    /* match tablet logo height */
     height: 3.5rem;
   }
 
@@ -739,15 +789,21 @@ min-height: 100dvh;
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {
+
+  :root {
+    --mobile-logo-height: 2.5rem;
+  }
+
   .banner {
     /* Hide the navigation links completely to save space */
-    justify-content:space-between; 
-    padding: 0.2rem 0.8rem;
+    justify-content: space-between;
+    padding: 0.75rem 1.2rem;
     align-items: center;
+    z-index: 1005;
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
   }
-  
+
   .banner nav {
     font-size: 1.5rem;
   }
@@ -760,8 +816,8 @@ min-height: 100dvh;
   }
 
   .App-logo {
-    height: 3rem; 
-    width: auto;
+    height: var(--mobile-logo-height);
+    width: 8.5rem;
   }
 
   .spacer p {
@@ -769,7 +825,7 @@ min-height: 100dvh;
     letter-spacing: 0.5px;
   }
 
-  .spacer{
+  .spacer {
     min-height: 95vh;
     max-height: 95vh;
     min-height: 95dvh;
@@ -794,7 +850,8 @@ min-height: 100dvh;
   }
 
   .back-button-wrapper {
-    bottom: 1rem; /* Move back button up slightly */
+    bottom: 1rem;
+    /* Move back button up slightly */
   }
 
   .back-button {
@@ -806,29 +863,34 @@ min-height: 100dvh;
   .desktop-nav {
     display: none;
   }
-  
+
   /* SHOW THE BURGER BUTTON */
   .burger-menu-button {
     display: flex;
-     flex-direction: column; /* New */
-  justify-content: center; /* New */
-  align-items: center; /* New */
-   z-index: 1002;
-   height: 3rem;
-   width: 3rem;
+    flex-direction: column;
+    /* New */
+    justify-content: center;
+    /* New */
+    align-items: center;
+    /* New */
+    z-index: 1002;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
-   .burger-icon-line {
-    width: 2rem; /* 32px */
-    height: 0.25rem; /* 4px */
-    margin: 0.3rem 0;
+  .burger-icon-line {
+    width: 1.5rem;
+    /* 32px */
+    height: 3px;
+    /* 4px */
+    margin: 4px 0;
     border-radius: 2px;
     background-color: var(--text-white);
   }
 
   .banner {
     /* Set background on banner for mobile to ensure readability */
-    justify-content: space-between; 
+    justify-content: space-between;
     padding: 0.2rem 0.8rem;
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
@@ -838,8 +900,8 @@ min-height: 100dvh;
     /* Matches the old scroll-padding-top value */
     scroll-margin-top: 5.5rem;
   }
-  
-  .App{
-     background-attachment:scroll;
+
+  .App {
+    background-attachment: scroll;
   }
 }

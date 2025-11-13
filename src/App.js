@@ -10,8 +10,7 @@ import Fasteners from './fastners/fastners.jsx';
 function App() {
   const [sectionsRendered, setSectionsRendered] = useState(false);
   const [lastClickedSection, setLastClickedSection] = useState(null);
-  // NEW STATE for Burger Menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // NEW STATE for Burger Menu
   const appRef = useRef(null);
 
   const panelsRef = useRef(null);
@@ -21,12 +20,18 @@ function App() {
 
   // Function to toggle the menu state
   const handleMenuToggle = useCallback(() => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen(prev => {
+      // 🚀 CHANGE: Block/Unblock body scrolling for professional mobile UX
+      document.body.style.overflow = prev ? 'auto' : 'hidden'; 
+      return !prev;
+    });
   }, []);
 
   // Effect to close menu when a section is clicked (optional but good UX)
   useEffect(() => {
     if (lastClickedSection) {
+      // 🚀 CHANGE: Ensure body scrolling is restored when a section is navigated to
+      document.body.style.overflow = 'auto'; 
       setIsMenuOpen(false); // Close menu after an action
     }
   }, [lastClickedSection]);
@@ -75,6 +80,8 @@ const handleBackToMenu = useCallback(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
     setIsMenuOpen(false); 
+    // 🚀 CHANGE: Ensure body scrolling is restored
+    document.body.style.overflow = 'auto'; 
     
     // 4. REMOVE class to restore fixed background
     if (appRef.current) {
@@ -119,27 +126,26 @@ const handleBackToMenu = useCallback(() => {
         </button>
       </div>
 
-      {/* MOBILE MENU OVERLAY (Conditionally RENDERED) */}
-      {isMenuOpen && (
-          <motion.nav
-            className="mobile-nav-overlay"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.3 }}
-            // Clicking the overlay background closes it
-            onClick={handleMenuToggle} 
-          >
-            {/* Prevent clicks on the list itself from bubbling up and closing the menu */}
-            <ul onClick={(e) => e.stopPropagation()}> 
-              <li onClick={handleMenuToggle}>Products</li>
-              <li onClick={handleMenuToggle}>Applications</li>
-              <li onClick={handleMenuToggle}>Fasteners</li>
-              <li onClick={handleMenuToggle}>Resources</li>
-              <li onClick={handleBackToMenu}>Main Menu</li>
-            </ul>
-          </motion.nav>
-        )}
+      {/* 🚀 MAJOR CHANGE: MOBILE MENU OVERLAY 
+          - Always rendered in the DOM for smooth CSS transitions (open and close).
+          - Class name now controls the CSS-based slide/fade transition.
+          - Replaced framer-motion with simple class-based rendering.
+      */}
+      <nav 
+        className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`}
+        // Clicking the overlay background closes it
+        onClick={handleMenuToggle} 
+      >
+        {/* Prevent clicks on the list itself from bubbling up and closing the menu */}
+        <ul onClick={(e) => e.stopPropagation()}> 
+          {/* Menu items close the menu and optionally perform an action */}
+          <li onClick={handleMenuToggle}>Products</li>
+          <li onClick={handleMenuToggle}>Applications</li>
+          <li onClick={handleMenuToggle}>Fasteners</li>
+          <li onClick={handleMenuToggle}>Resources</li>
+          <li onClick={handleBackToMenu}>Main Menu</li>
+        </ul>
+      </nav>
         
       {/* Spacer + Start Buttons */}
       <div className='spacer' ref={menuRef}>
