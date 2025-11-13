@@ -815,7 +815,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.714);
+    background-color: rgba(0, 0, 0, 0.702);
 
     z-index: -1;
   }
@@ -830,7 +830,7 @@ body {
   align-items: center;
   flex-direction: row;
   /* Base padding */
-  padding: 1.5rem 0rem;
+  padding: 0rem 0rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
