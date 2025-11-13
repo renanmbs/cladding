@@ -826,7 +826,7 @@ body {
   height: 100vh;
   min-height: 85vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   /* Base padding */
@@ -835,6 +835,7 @@ body {
   position: relative;
   overflow: hidden;
   border: solid blue;
+  padding-top:5rem
 }
 
   .banner nav {
