@@ -203,7 +203,7 @@ h2 {
   }
 
   .cladding-cards {
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .cladding-card {
@@ -217,7 +217,7 @@ h2 {
   
   .card2{
     /* padding: 1rem 0rem; */
-    max-height: 13.75rem;
+    max-height: 13rem;
     max-width: 100%; 
     max-width: 95%; 
   }
