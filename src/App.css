@@ -576,7 +576,7 @@ body {
 /* 🍔 Burger Animation (The X button) */
 .burger-menu-button.open .burger-icon-line:nth-child(1) {
   /* FIX: Reset to 9px translation and 45 degrees rotation */
-  transform: translateY(11px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(2) {
@@ -585,7 +585,7 @@ body {
 
 .burger-menu-button.open .burger-icon-line:nth-child(3) {
   /* FIX: Reset to -9px translation and -45 degrees rotation */
-  transform: translateY(-11px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Mobile Navigation Overlay */
@@ -800,42 +800,9 @@ body {
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
-  /* Smooth animation on scroll */
-  transition:
-    backdrop-filter 0.4s ease,
-    background-color 0.4s ease,
-    box-shadow 0.4s ease; 
-     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: none; /* disable heavy blur */
-    -webkit-backdrop-filter: none;
-    background-blend-mode: normal; /* prevents soft tint blending */
+    /* background: #cccccc6c; 
+    backdrop-filter: blur(15px);    */
   }
-
-  .banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.702);
-
-    z-index: -1;
-  }
-
-  .screen {
-    width: 100%;
-  scroll-snap-align: start;
-  height: 85vh;
-  min-height: 85vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  /* Base padding */
-  padding: 0rem 0rem;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  border: solid blue;
-}
 
   .banner nav {
     font-size: 1.5rem;
@@ -849,7 +816,7 @@ body {
   }
 
   .App-logo {
-    height: var(--mobile-logo-height);
+    height: 2.5rem;
     width: auto;
   }
 
@@ -859,13 +826,11 @@ body {
   }
 
   .spacer {
-    min-height: 90vh;
-    max-height: 90vh;
-    min-height: 90dvh;
-    max-height: 90dvh;
-    justify-content: flex-start;
-    padding-top: 5rem;
-   border: solid pink; 
+    min-height: 95vh;
+    max-height: 95vh;
+    min-height: 95dvh;
+    max-height: 95dvh;
+    padding-top: 3.5rem;
   }
 
   .logo2 {
@@ -884,17 +849,9 @@ body {
     font-size: 1.2rem;
   }
 
- .back-button-wrapper {
-    /* 🚀 CRITICAL FIX: Change to fixed position for mobile */
-    position: fixed; 
-    bottom: 20px; /* Adjusted to be slightly above the phone's bottom edge */
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 100; /* Ensure it is on top of all content */
-    margin: 0;
+  .back-button-wrapper {
+    bottom: 1rem;
+    /* Move back button up slightly */
   }
 
   .back-button {
@@ -941,8 +898,7 @@ body {
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    align-items: center;
-    border: solid green;
+    scroll-margin-top: 5.5rem;
   }
 
   .App {

@@ -62,6 +62,7 @@ function App() {
     setLastClickedSection(sectionKey);
   }, []);
 
+  // Scroll-to-top handler
 const handleBackToMenu = useCallback(() => {
   if (menuRef.current && appRef.current) {
     // 1. ADD class to prevent background twitching
@@ -79,6 +80,8 @@ const handleBackToMenu = useCallback(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
     setIsMenuOpen(false); 
+    // 🚀 CHANGE: Ensure body scrolling is restored
+    document.body.style.overflow = 'auto'; 
     
     // 4. REMOVE class to restore fixed background
     if (appRef.current) {
@@ -146,7 +149,6 @@ const handleBackToMenu = useCallback(() => {
         
       {/* Spacer + Start Buttons */}
       <div className='spacer' ref={menuRef}>
-        
         <img src={logo2} className="logo2" alt="Monarch Cladding Systems" />
         <p>Cladding and Rainscreen Systems</p>
 
