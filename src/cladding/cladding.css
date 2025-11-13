@@ -195,7 +195,6 @@ h2 {
 @media (max-width: 480px) {
   .section2 {
     padding: 0rem 0.5rem;
-    border: solid red;
     min-height: 65vh; 
   }
 

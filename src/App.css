@@ -576,7 +576,7 @@ body {
 /* 🍔 Burger Animation (The X button) */
 .burger-menu-button.open .burger-icon-line:nth-child(1) {
   /* FIX: Reset to 9px translation and 45 degrees rotation */
-  transform: translateY(10px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(2) {
@@ -585,7 +585,7 @@ body {
 
 .burger-menu-button.open .burger-icon-line:nth-child(3) {
   /* FIX: Reset to -9px translation and -45 degrees rotation */
-  transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 /* Mobile Navigation Overlay */
