@@ -932,6 +932,7 @@ body {
   .scroll-container {
     /* Matches the old scroll-padding-top value */
     align-items: center;
+    border: solid green;
   }
 
   .App {
