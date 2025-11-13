@@ -63,28 +63,36 @@ function App() {
   }, []);
 
 const handleBackToMenu = useCallback(() => {
+  // 1. Manually scroll the main window (document.documentElement/body) to the top
+  // This addresses the issue where the content scrolls up but the main window is still scrolled down
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  
+  // 2. Clear any lingering scroll on the content container BEFORE unrendering
+  const scrollContainer = appRef.current.querySelector('.scroll-container');
+  if (scrollContainer) {
+    scrollContainer.scrollTop = 0;
+  }
+  
+  // 3. Perform the smooth scroll to the main menu (spacer)
   if (menuRef.current) {
-    // 1. We no longer need to add or remove the 'no-fixed-background' class!
-    
-    // 2. Perform the smooth scroll
     menuRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   }
 
-  // 3. Delay the state reset (use the 800ms for safety)
+  // 4. Delay the state reset (800ms to allow the smooth scroll to finish)
   setTimeout(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
     setIsMenuOpen(false); 
     
-    // 🚀 RESTORE body scrolling
+    // RESTORE body scrolling
     document.body.style.overflow = 'auto'; 
-    
-    // 4. No class removal needed here either!
   }, 800); 
 }, []);
+
   return (
     <div className="App" ref={appRef}>
       {/* Banner */}

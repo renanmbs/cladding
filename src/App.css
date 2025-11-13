@@ -884,10 +884,17 @@ body {
     font-size: 1.2rem;
   }
 
-  .back-button-wrapper {
-    border: solid green;
-    bottom: 1rem;
-    /* Move back button up slightly */
+ .back-button-wrapper {
+    /* 🚀 CRITICAL FIX: Change to fixed position for mobile */
+    position: fixed; 
+    bottom: 20px; /* Adjusted to be slightly above the phone's bottom edge */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 100; /* Ensure it is on top of all content */
+    margin: 0;
   }
 
   .back-button {
