@@ -810,7 +810,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: row;
   /* Base padding */
   padding: 1.5rem 0rem;
@@ -914,6 +914,7 @@ body {
   .scroll-container {
     /* Matches the old scroll-padding-top value */
     scroll-margin-top: 1rem;
+    align-items: center;
   }
 
   .App {
