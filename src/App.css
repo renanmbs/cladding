@@ -824,7 +824,7 @@ body {
     width: 100%;
   scroll-snap-align: start;
   height: 100vh;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
