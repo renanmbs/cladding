@@ -194,7 +194,7 @@ h2 {
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {
   .section2 {
-    padding: 10rem 0.5rem;
+    padding: 1rem 0.5rem;
     border: solid red;
     min-height: 80vh; 
   }
