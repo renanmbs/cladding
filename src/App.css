@@ -804,6 +804,22 @@ body {
     backdrop-filter: blur(15px);    */
   }
 
+  .screen {
+  scroll-snap-align: start;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: row;
+  /* Base padding */
+  padding: 1.5rem 0rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: solid blue;
+}
+
   .banner nav {
     font-size: 1.5rem;
   }
@@ -830,7 +846,6 @@ body {
     max-height: 95vh;
     min-height: 95dvh;
     max-height: 95dvh;
-    padding-top: 3.5rem;
   }
 
   .logo2 {
@@ -898,7 +913,7 @@ body {
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: 1rem;
   }
 
   .App {
