@@ -859,10 +859,10 @@ body {
   }
 
   .spacer {
-    min-height: 95vh;
-    max-height: 95vh;
-    min-height: 95dvh;
-    max-height: 95dvh;
+    min-height: 90vh;
+    max-height: 90vh;
+    min-height: 90dvh;
+    max-height: 90dvh;
     justify-content: flex-start;
     padding-top: 5rem;
    border: solid pink; 
