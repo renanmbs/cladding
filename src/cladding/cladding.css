@@ -196,6 +196,10 @@ h2 {
   .section2 {
     padding: 0rem 0.5rem;
     border: solid red;
+    min-height: 65vh; 
+  }
+
+  .cladding-section{
     min-height: 70vh; 
   }
 
