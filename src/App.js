@@ -62,11 +62,9 @@ function App() {
     setLastClickedSection(sectionKey);
   }, []);
 
-  // Scroll-to-top handler
 const handleBackToMenu = useCallback(() => {
-  if (menuRef.current && appRef.current) {
-    // 1. ADD class to prevent background twitching
-    appRef.current.classList.add('no-fixed-background');
+  if (menuRef.current) {
+    // 1. We no longer need to add or remove the 'no-fixed-background' class!
     
     // 2. Perform the smooth scroll
     menuRef.current.scrollIntoView({
@@ -75,21 +73,18 @@ const handleBackToMenu = useCallback(() => {
     });
   }
 
-  // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
+  // 3. Delay the state reset (use the 800ms for safety)
   setTimeout(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
     setIsMenuOpen(false); 
-    // 🚀 CHANGE: Ensure body scrolling is restored
+    
+    // 🚀 RESTORE body scrolling
     document.body.style.overflow = 'auto'; 
     
-    // 4. REMOVE class to restore fixed background
-    if (appRef.current) {
-        appRef.current.classList.remove('no-fixed-background');
-    }
-  }, 600);
+    // 4. No class removal needed here either!
+  }, 800); 
 }, []);
-
   return (
     <div className="App" ref={appRef}>
       {/* Banner */}
