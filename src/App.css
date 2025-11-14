@@ -911,7 +911,7 @@ body {
   }
 
   .screen{
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   /* .cladding-screen,
