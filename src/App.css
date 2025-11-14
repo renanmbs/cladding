@@ -912,4 +912,9 @@ body {
   .screen{
     justify-content: flex-start;
   }
+
+  .cladding-screen,
+  .fasteners-screen{
+    justify-content: center;
+  }
 }
