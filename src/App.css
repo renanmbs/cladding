@@ -902,7 +902,7 @@ body {
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 1.5rem !important;
+    /* scroll-margin-top: 1.5rem !important; */
     scroll-behavior: smooth;
   }
 
