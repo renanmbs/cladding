@@ -222,13 +222,13 @@ h2 {
   
   .card2{
     /* padding: 1rem 0rem; */
-    max-height: 12.3rem;
+    max-height: 11.75rem;
     max-width: 100%; 
     max-width: 95%; 
   }
 
   .c2{
-    width: 17.5rem;
+    width: 19rem;
   }
   
   .cladding-card:hover {
