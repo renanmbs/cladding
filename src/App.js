@@ -68,10 +68,10 @@ const handleBackToMenu = useCallback(() => {
     // 1. ADD class to prevent background twitching
     // appRef.current.classList.add('no-fixed-background');
 
-    // menuRef.current.scrollIntoView({
-    //   behavior: 'smooth',
-    //   block: 'start'
-    // });
+    menuRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
 
   // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
@@ -125,11 +125,6 @@ const handleBackToMenu = useCallback(() => {
         </button>
       </div>
 
-      {/* 🚀 MAJOR CHANGE: MOBILE MENU OVERLAY 
-          - Always rendered in the DOM for smooth CSS transitions (open and close).
-          - Class name now controls the CSS-based slide/fade transition.
-          - Replaced framer-motion with simple class-based rendering.
-      */}
       <nav 
         className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`}
         // Clicking the overlay background closes it
