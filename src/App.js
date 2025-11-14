@@ -38,24 +38,25 @@ function App() {
 
 
   // Scroll effect after a section is chosen
-  useEffect(() => {
-    const sectionRefs = {
-      panels: panelsRef,
-      cladding: claddingRef,
-      fasteners: fastenersRef,
-    };
+  // Scroll effect after a section is chosen
+useEffect(() => {
+  const sectionRefs = {
+    panels: panelsRef,
+    cladding: claddingRef,
+    fasteners: fastenersRef,
+  };
 
-    if (!lastClickedSection) return;
-    const targetRef = sectionRefs[lastClickedSection];
-    if (!targetRef.current) return;
+  if (!lastClickedSection) return;
+  const targetRef = sectionRefs[lastClickedSection];
+  if (!targetRef.current) return;
 
-    targetRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+  // Reverting to the simplest and most reliable scroll command
+  targetRef.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
 
-  }, [lastClickedSection, sectionsRendered]);
-
+}, [lastClickedSection, sectionsRendered]);
   // Start button handler
   const handleStart = useCallback((sectionKey) => {
     setSectionsRendered(true);
