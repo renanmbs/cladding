@@ -108,7 +108,7 @@ white: #ffffff */
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {
   .divider-container {
-    margin: 1rem 0.5rem 0.3rem 0.5rem;
+    margin: 0rem 0.5rem 0.3rem 0.5rem;
     padding: 0px 0;
     height: 2rem;
   }
