@@ -532,7 +532,7 @@ body {
 }
 
 .screen {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   height: 100vh;
   min-height: 100vh;
   display: flex;
@@ -912,8 +912,6 @@ body {
 
   .screen{
     justify-content: flex-start;
-    height: 85h;
-  min-height: 85vh;
   }
 
    section {
