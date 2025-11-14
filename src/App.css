@@ -914,6 +914,10 @@ body {
     justify-content: flex-start;
   }
 
+   section {
+    scroll-margin-top: 6rem; /* match your mobile header height */
+  }
+
   /* .cladding-screen,
   .fasteners-screen{
     justify-content: center;
