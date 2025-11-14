@@ -68,10 +68,10 @@ const handleBackToMenu = useCallback(() => {
     // 1. ADD class to prevent background twitching
     // appRef.current.classList.add('no-fixed-background');
 
-    menuRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    // menuRef.current.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start'
+    // });
   }
 
   // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)

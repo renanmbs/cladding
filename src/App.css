@@ -900,7 +900,7 @@ body {
 
   .scroll-container {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: 0rem;
     scroll-behavior: smooth;
   }
 
