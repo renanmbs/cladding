@@ -801,6 +801,7 @@ body {
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
+    border: solid purple;
     
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
