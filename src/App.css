@@ -544,6 +544,7 @@ body {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  border: solid blue;
 }
 
 .burger-menu-button {
