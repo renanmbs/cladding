@@ -689,7 +689,7 @@ body {
   }
 
   .logo2 {
-    height: 15rem;
+    height: 10rem;
     /* Reduced main logo size */
   }
 
@@ -710,7 +710,7 @@ body {
 }
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .banner {
     /* Increase padding to ensure content isn't flush with edges */
     padding: 0.5rem 1rem;
@@ -738,7 +738,7 @@ body {
   }
 
   .logo2 {
-    height: 12rem;
+    height: 8rem;
     margin-bottom: 1.5rem !important;
   }
 
@@ -912,6 +912,7 @@ body {
   .screen{
     justify-content: flex-start;
     scroll-snap-align: center;
+    scroll-margin-top: 6rem;
   }
 
    section {
