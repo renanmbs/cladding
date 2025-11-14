@@ -912,8 +912,8 @@ body {
 
   .screen{
     justify-content: flex-start;
-    height: 94vh;
-  min-height: 94vh;
+    height: 85h;
+  min-height: 85vh;
   }
 
    section {
