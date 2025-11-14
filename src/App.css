@@ -912,10 +912,13 @@ body {
 
   .screen{
     justify-content: flex-start;
+    height: 94vh;
+  min-height: 94vh;
   }
 
    section {
-    scroll-margin-top: 3rem; /* match your mobile header height */
+    scroll-margin-top: 6rem; /* match your mobile header height */
+    border: solid red;
   }
 
   /* .cladding-screen,
