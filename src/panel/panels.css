@@ -466,4 +466,9 @@
     right: -7vw; 
   }
 
+  .panels-section{
+margin-top: 5rem;
+border: solid green;
+}
+
 }
