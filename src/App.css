@@ -915,7 +915,7 @@ body {
   }
 
    section {
-    scroll-margin-top: 6rem; /* match your mobile header height */
+    scroll-margin-top: 3rem; /* match your mobile header height */
   }
 
   /* .cladding-screen,
