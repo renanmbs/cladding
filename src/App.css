@@ -908,4 +908,8 @@ body {
   .App {
     background-attachment: scroll;
   }
+
+  .screen{
+    justify-content: flex-start;
+  }
 }
