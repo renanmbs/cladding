@@ -709,6 +709,30 @@ body {
   }
 }
 
+@media (max-width: 915px) {
+.screen{
+  position: relative;
+}
+
+.back-button-wrapper {
+  border: solid red;
+    position: static; 
+    margin: 0rem auto 1rem auto; /* Add vertical spacing and center it */
+    /* padding: 0 0 2rem 0; */
+    bottom: auto; /* Remove fixed bottom positioning */
+  }
+
+  /* Ensure the button itself is centered within the new static wrapper */
+  .back-button {
+    margin: 0 auto; 
+  }
+
+  /* The fasteners screen needs slightly more bottom padding now */
+  .fasteners-screen {
+    padding-bottom: 0rem; /* Add extra room at the bottom of the screen */
+  }
+}
+
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
 @media (max-width: 800px) {
   .banner {
@@ -788,7 +812,7 @@ body {
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
 
   :root {
     --mobile-logo-height: 2.5rem;
@@ -800,7 +824,6 @@ body {
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
-    border: solid purple;
     
     /* background: #cccccc6c; 
     backdrop-filter: blur(15px);    */
@@ -827,14 +850,6 @@ body {
     letter-spacing: 0.5px;
   }
 
-  .spacer {
-    min-height: 92vh;
-    max-height: 94vh;
-    min-height: 92dvh;
-    max-height:94dvh;
-    border: solid pink;
-    margin: 0 !important;
-  }
 
   .logo2 {
     height: 6rem;
@@ -911,17 +926,26 @@ body {
 
   .screen{
     justify-content: flex-start;
-    scroll-snap-align: center;
-    scroll-margin-top: 6rem;
-  }
-
-   section {
-    scroll-margin-top: 6rem; /* match your mobile header height */
-    border: solid red;
+    scroll-snap-align: start;
+    /* scroll-margin-top: 6rem; */
   }
 
   /* .cladding-screen,
   .fasteners-screen{
     justify-content: center;
   } */
+}
+
+@media (max-width: 400px) {
+.logo2 {
+    height: 5rem;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 330px) {
+.logo2 {
+    height: 3rem;
+  }
+
 }

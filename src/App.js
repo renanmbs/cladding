@@ -195,7 +195,8 @@ const handleBackToMenu = useCallback(() => {
           >
             <Fasteners />
 
-            <div className="back-button-wrapper">
+          </motion.section>
+           {/* <div className="back-button-wrapper">
               <button
                 onClick={handleBackToMenu}
                 className='back-button'
@@ -203,8 +204,7 @@ const handleBackToMenu = useCallback(() => {
               >
                 ↑
               </button>
-            </div>
-          </motion.section>
+            </div> */}
         </div>
       )}
     </div>

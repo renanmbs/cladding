@@ -41,6 +41,7 @@ white: #ffffff */
   margin: 1rem auto 1rem auto;
   padding: 2px;
   justify-content: center; 
+  flex: 0.5;
 }
 
 .line {
@@ -63,7 +64,7 @@ white: #ffffff */
 }
 
 /* --- 💻 Small Laptops & Large Tablets (Max 1200px) --- */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .divider-container {
     width: 100%;
   }
@@ -76,31 +77,29 @@ white: #ffffff */
   object-fit: cover !important;
 }
 
-}
+} */
 
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 915px) {
   .divider-container {
     width: 100%;
     margin: 0.3rem auto 0.3rem auto;
   }
-
+/* 
   .text {
-    /* Allow text to wrap if it's too long for the smaller screen */
     white-space: normal; 
     text-align: center;
-    font-size: 1rem; 
+    font-size: 1rem;
   }
-
-  /* Reduce thickness of divider lines to match smaller text */
   .line {
     height: 2px;
-  }
+  } */
 
   .fastener-image{
+    flex: 1;
     height: 25rem !important;
-    width: 36rem !important;
+    width: auto;
   }
 }
 
@@ -128,7 +127,6 @@ white: #ffffff */
   }
 
   .fastener-image{
-    width: 18rem !important;
     height: 12rem !important;
   }
 }

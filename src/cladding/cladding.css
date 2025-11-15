@@ -85,6 +85,7 @@ h2 {
   flex-wrap: wrap; 
   width: 100%;
   max-width: 1400px; 
+  flex: 0.5;
 }
 
 .cladding-card {
@@ -92,11 +93,11 @@ h2 {
   color: #323b41;
   border-radius: 1rem;
   padding: 1rem;
-  flex: 0 1 25rem; 
   max-width: 25rem; 
   min-height: 30rem; 
   height: auto; 
   text-align: center;
+  flex: 0.5;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
               box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -148,11 +149,6 @@ h2 {
     min-height: 18rem;
   }
 
-
-  .c2{
-    width: 29rem;
-  }
-
   .cladding-card img {
     /* Reapply a suitable max-height for a small laptop to keep proportion */
     max-height: 10rem; 
@@ -166,52 +162,62 @@ h2 {
 .cladding-card p{
  margin-bottom: 0rem;
 }
+
+.card2{
+max-height: 20rem !important;
+}
+}
+
+@media (max-width: 1000px){
+  .cladding-card p{
+ font-size: 0.9rem;
+}
+
+.cladding-card h3{
+ font-size: 1.2rem;
+}
+
 }
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
 @media (max-width: 768px) {
-  .divider-container {
-    width: 90%;
-    margin-bottom: 2rem;
-  }
-
-  .text h3 {
-    font-size: 1.5rem; /* Smaller title font */
-    padding: 0 1rem;
-  }
-
-  .cladding-cards {
-    gap: 1.5rem;
-  }
-
-  .cladding-card {
-    flex: 0 1 30%; 
-    max-width: 30%;
-    max-height: 25rem;
-    min-height: auto; /* Let content dictate height */
-    padding: 1.5rem 1rem;
-  }
-  
-  .cladding-card img {
-    max-height: 6rem; /* Reduce image height */
-  }
 
   .cladding-card h3 {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   
   .cladding-card p {
-    font-size: 1rem;
+    font-size:0.9rem;
   }
+
+  .cladding-card img {
+    /* Reapply a suitable max-height for a small laptop to keep proportion */
+    max-height: 8rem; 
+    margin-bottom: 0rem;
+  }
+
 }
 
 
+
+@media (max-width:560px){
+.cladding-card h3 {
+    font-size: 1rem;
+  }
+  .cladding-card img {
+    /* Reapply a suitable max-height for a small laptop to keep proportion */
+    max-height: 7rem; 
+    margin-bottom: 0rem;
+  }
+
+}
+
 /* --- 📞 Mobile Phones (Max 480px) --- */
-@media (max-width: 480px) {
-  .section2 {
+@media (max-width: 490px) {
+  /* .section2 {
     padding: 0rem 0.5rem;
     min-height: 65vh; 
-  }
+  } */
 
   .cladding-section{
     min-height: 80vh; 
@@ -227,8 +233,8 @@ h2 {
   }
 
   .cladding-card {
-    flex: 0 1 40%; 
-    max-width: 40%; 
+    /* flex: 0 1 40%; 
+    max-width: 40%;  */
     padding: 1rem 0.8rem;
     transition: none; 
     min-height: auto;
@@ -237,13 +243,13 @@ h2 {
   
   .card2{
     /* padding: 1rem 0rem; */
-    max-height: 11.75rem;
+    /* max-height: 11.75rem; */
     max-width: 100%; 
   }
 
-  .c2{
+  /* .c2{
     width: 19rem;
-  }
+  } */
   
   .cladding-card:hover {
     transform: none;
@@ -266,9 +272,10 @@ h2 {
   font-size: 1rem;
   margin: 0 !important;
 }
+}
 
-/* .cladding-section{
-margin-top: 3rem;
-border: solid green;
-} */
+@media (max-width:360px){
+.cladding-card p {
+    font-size: 0.8rem;
+  }
 }
