@@ -206,7 +206,7 @@
   margin: 1rem auto 1rem auto;
   padding: 2px;
   justify-content: center; 
-  flex: 0.5;
+  flex: 0 0 auto;
 }
 
 .line {
@@ -379,7 +379,7 @@
    .divider-container {
     margin: 0 !important;
     padding: 0px 0;
-    flex: 0.5;
+    flex: 0 0 auto;
   }
 
   .panel-info p.main-description {
