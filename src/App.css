@@ -379,6 +379,7 @@ body {
   max-height: 100vh;
   height: 100dvh;
   min-height: 100dvh;
+  border: solid red;
 }
 
 .spacer p {
