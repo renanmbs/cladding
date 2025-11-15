@@ -85,7 +85,7 @@ h2 {
   flex-wrap: wrap; 
   width: 100%;
   max-width: 1400px; 
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 
 .cladding-card {
@@ -97,7 +97,7 @@ h2 {
   min-height: 30rem; 
   height: auto; 
   text-align: center;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
               box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -144,7 +144,6 @@ h2 {
 
   .cladding-card {
     /* Allow cards to be slightly smaller to fit 2 across more comfortably on 14" screen */
-    flex: 0 1 45%; 
     max-width: 40%;
     min-height: 18rem;
   }
