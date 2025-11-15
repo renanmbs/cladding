@@ -33,7 +33,7 @@ Blueish: #7a8ea0
 Light Grey: #cccccc 
 white: #ffffff */
 
-.divider-container {
+/* .divider-container {
   display: flex;
   align-items: center;
   width: 80%; 
@@ -42,7 +42,7 @@ white: #ffffff */
   padding: 2px;
   justify-content: center; 
   flex: 0.5;
-}
+} */
 
 .line {
   flex-grow: 1;
@@ -82,10 +82,10 @@ white: #ffffff */
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
 @media (max-width: 915px) {
-  .divider-container {
+  /* .divider-container {
     width: 100%;
     margin: 0.3rem auto 0.3rem auto;
-  }
+  } */
 /* 
   .text {
     white-space: normal; 
@@ -109,7 +109,6 @@ white: #ffffff */
   .divider-container {
     margin: 0rem 0.5rem 0.3rem 0.5rem;
     padding: 0px 0;
-    height: 2rem;
   }
 
   .text {

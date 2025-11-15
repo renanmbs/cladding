@@ -705,7 +705,6 @@ body {
 
   .panels-screen {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5.5rem;
   }
 }
 
@@ -800,7 +799,7 @@ body {
 
   .panels-screen {
     /* Matches the old scroll-padding-top value */
-    scroll-margin-top: 5rem;
+
   }
 
   .burger-menu-button {
