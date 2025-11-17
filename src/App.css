@@ -270,7 +270,7 @@ body {
 }
 
 body {
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* but locked to 'hidden' when menu is open */
 }
 
@@ -544,7 +544,7 @@ body {
   padding: 1.5rem 0rem;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .burger-menu-button {
@@ -949,3 +949,16 @@ body {
   }
 
 }
+
+
+/* 
+
+Main image - too big
+
+Cutting overflow
+
+Cladding card is too big
+
+Panels and fasteners card smaller
+
+*/
