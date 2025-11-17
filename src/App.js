@@ -60,6 +60,8 @@ function App() {
   const handleStart = useCallback((sectionKey) => {
     setSectionsRendered(true);
     setLastClickedSection(sectionKey);
+    console.log(`Current Viewport Width: ${window.innerWidth}px`);
+console.log(`Current Viewport Height: ${window.innerHeight}px`);
   }, []);
 
   // Scroll-to-top handler
