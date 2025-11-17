@@ -556,6 +556,10 @@ body {
     height: 3.5rem;
   }
 
+  .screen{
+    scroll-snap-align: none;
+  }
+
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */

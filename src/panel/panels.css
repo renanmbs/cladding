@@ -437,7 +437,7 @@
   
   .panel-image img{
     width: 90%;
-    object-fit: contain !important;
+    object-fit: cover !important;
   }
 
 }
