@@ -357,6 +357,21 @@
 
 }
 
+@media (max-width: 820px){
+
+  .panel-image {
+    width: 90%;
+    flex: none;
+    height: 15rem; /* Increased image size fix */
+    margin-top: 1.5rem;
+  }
+
+  .panel-image img{
+    height: 17rem;
+    width: 90%; /* Let the image fill its container */
+  }
+}
+
 @media (max-width: 768px) {
 .panel-image img{
     height: 100%; /* Image takes 100% of the 200px wrapper height */

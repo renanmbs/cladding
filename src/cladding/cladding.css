@@ -178,6 +178,19 @@ max-height: 20rem !important;
 
 }
 
+@media (max-width: 820px){
+  .cladding-card {
+    /* Allow cards to be slightly smaller to fit 2 across more comfortably on 14" screen */
+    max-width: 40%;
+    height: 15rem;
+  }
+
+   .cladding-card p{
+ font-size: 0.8rem;
+}
+
+}
+
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
 @media (max-width: 768px) {
 

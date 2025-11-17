@@ -103,6 +103,12 @@ white: #ffffff */
   }
 }
 
+@media (max-width: 820px) {
+.fastener-image{
+    height: 17rem !important;
+    width: 25rem !important;
+  }
+}
 
 /* --- 📞 Mobile Phones (Max 480px) --- */
 @media (max-width: 480px) {

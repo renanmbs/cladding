@@ -379,7 +379,6 @@ body {
   max-height: 100vh;
   height: 100dvh;
   min-height: 100dvh;
-  border: solid red;
 }
 
 .spacer p {
@@ -734,7 +733,7 @@ body {
 }
 
 /* --- 📱 iPad Portrait & Smaller Tablets (Max 768px) --- */
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .banner {
     /* Increase padding to ensure content isn't flush with edges */
     padding: 0.5rem 1rem;
