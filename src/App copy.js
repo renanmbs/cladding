@@ -10,7 +10,7 @@ import Fasteners from './fastners/fastners.jsx';
 function App() {
   const [sectionsRendered, setSectionsRendered] = useState(false);
   const [lastClickedSection, setLastClickedSection] = useState(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // NEW STATE for Burger Menu
   const appRef = useRef(null);
 
   const panelsRef = useRef(null);
@@ -21,7 +21,7 @@ function App() {
   // Function to toggle the menu state
   const handleMenuToggle = useCallback(() => {
     setIsMenuOpen(prev => {
-      // Block/Unblock body scrolling for mobile UX
+      // 🚀 CHANGE: Block/Unblock body scrolling for professional mobile UX
       document.body.style.overflow = prev ? 'auto' : 'hidden'; 
       return !prev;
     });
@@ -30,7 +30,7 @@ function App() {
   // Effect to close menu when a section is clicked (optional but good UX)
   useEffect(() => {
     if (lastClickedSection) {
-      // Ensure body scrolling is restored when a section is navigated to
+      // 🚀 CHANGE: Ensure body scrolling is restored when a section is navigated to
       document.body.style.overflow = 'auto'; 
       setIsMenuOpen(false); // Close menu after an action
     }
@@ -64,65 +64,85 @@ function App() {
 
   // Scroll-to-top handler
 const handleBackToMenu = useCallback(() => {
-  if (menuRef.current) {
+  if (menuRef.current && appRef.current) {
+    // 1. ADD class to prevent background twitching
+    // appRef.current.classList.add('no-fixed-background');
+
     menuRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   }
 
-  // Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
+  // 3. Delay the state reset and class removal (Match the scroll/transition time, e.g., 600ms)
   setTimeout(() => {
     setSectionsRendered(false);
     setLastClickedSection(null);
     setIsMenuOpen(false); 
-    // Ensure body scrolling is restored
+    // 🚀 CHANGE: Ensure body scrolling is restored
     document.body.style.overflow = 'auto'; 
     
+    // 4. REMOVE class to restore fixed background
+    if (appRef.current) {
+        // appRef.current.classList.remove('no-fixed-background');
+    }
   }, 600);
 }, []);
 
   return (
     <div className="App" ref={appRef}>
-        
-      {/* Spacer + Start Buttons - NOW CONTAINS THE BANNER */}
-      <div className='spacer' ref={menuRef}>
-        
-        {/* Banner - 🚩 FIXED: MOVED INSIDE .spacer */}
-        <div className='banner' aria-label="Main Navigation">
-          {/* Added onClick for the logo */}
-          <div
-            onClick={handleBackToMenu}
-            style={{ cursor: 'pointer' }}
-            role="button"
-            aria-label="Back to top menu"
-          >
-            <img src={logo} className="App-logo" alt="Monarch Metal Logo" />
-          </div>
-          
-          {/* STANDARD DESKTOP NAV */}
-          <nav className='desktop-nav'>
-            <ul>
-              <li>Products</li>
-              <li>Applications</li>
-              <li>Fasteners</li>
-              <li>Resources</li>
-            </ul>
-          </nav>
-          
-          {/* BURGER/X BUTTON (Displays as X when menu is open) */}
-          <button
-            className={`burger-menu-button ${isMenuOpen ? 'open' : ''}`}
-            onClick={handleMenuToggle}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            <div className="burger-icon-line"></div>
-            <div className="burger-icon-line"></div>
-            <div className="burger-icon-line"></div>
-          </button>
+      {/* Banner */}
+      <div className='banner' aria-label="Main Navigation">
+        {/* Added onClick for the logo */}
+        <div
+          onClick={handleBackToMenu}
+          style={{ cursor: 'pointer' }}
+          role="button"
+          aria-label="Back to top menu"
+        >
+          <img src={logo} className="App-logo" alt="Monarch Metal Logo" />
         </div>
         
-        {/* Spacer's Main Content (Moved down by CSS padding-top) */}
+        {/* STANDARD DESKTOP NAV */}
+        <nav className='desktop-nav'>
+          <ul>
+            <li>Products</li>
+            <li>Applications</li>
+            <li>Fasteners</li>
+            <li>Resources</li>
+          </ul>
+        </nav>
+        
+        {/* BURGER/X BUTTON (Displays as X when menu is open) */}
+        <button
+          className={`burger-menu-button ${isMenuOpen ? 'open' : ''}`}
+          onClick={handleMenuToggle}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <div className="burger-icon-line"></div>
+          <div className="burger-icon-line"></div>
+          <div className="burger-icon-line"></div>
+        </button>
+      </div>
+
+      <nav 
+        className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`}
+        // Clicking the overlay background closes it
+        onClick={handleMenuToggle} 
+      >
+        {/* Prevent clicks on the list itself from bubbling up and closing the menu */}
+        <ul onClick={(e) => e.stopPropagation()}> 
+          {/* Menu items close the menu and optionally perform an action */}
+          <li onClick={handleMenuToggle}>Products</li>
+          <li onClick={handleMenuToggle}>Applications</li>
+          <li onClick={handleMenuToggle}>Fasteners</li>
+          <li onClick={handleMenuToggle}>Resources</li>
+          <li onClick={handleBackToMenu}>Main Menu</li>
+        </ul>
+      </nav>
+        
+      {/* Spacer + Start Buttons */}
+      <div className='spacer' ref={menuRef}>
         <img src={logo2} className="logo2" alt="Monarch Cladding Systems" />
         <p>Cladding and Rainscreen Systems</p>
 
@@ -143,22 +163,6 @@ const handleBackToMenu = useCallback(() => {
         </motion.div>
       </div>
 
-      <nav 
-        className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`}
-        // Clicking the overlay background closes it
-        onClick={handleMenuToggle} 
-      >
-        {/* Prevent clicks on the list itself from bubbling up and closing the menu */}
-        <ul onClick={(e) => e.stopPropagation()}> 
-          {/* Menu items close the menu and optionally perform an action */}
-          <li onClick={handleMenuToggle}>Products</li>
-          <li onClick={handleMenuToggle}>Applications</li>
-          <li onClick={handleMenuToggle}>Fasteners</li>
-          <li onClick={handleMenuToggle}>Resources</li>
-          <li onClick={handleBackToMenu}>Main Menu</li>
-        </ul>
-      </nav>
-        
       {/* Section Content */}
       {sectionsRendered && (
         <div className="scroll-container">
@@ -192,6 +196,15 @@ const handleBackToMenu = useCallback(() => {
             <Fasteners />
 
           </motion.section>
+           {/* <div className="back-button-wrapper">
+              <button
+                onClick={handleBackToMenu}
+                className='back-button'
+                aria-label="Back to main product selection"
+              >
+                ↑
+              </button>
+            </div> */}
         </div>
       )}
     </div>

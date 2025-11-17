@@ -108,6 +108,11 @@ white: #ffffff */
     height: 17rem !important;
     width: 25rem !important;
   }
+   .text {
+    /* Further reduction for mobile */
+    font-size: 0.9rem; 
+    padding: 0 0.2rem;
+  }
 }
 
 /* --- 📞 Mobile Phones (Max 480px) --- */

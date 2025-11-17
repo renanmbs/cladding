@@ -362,13 +362,26 @@
   .panel-image {
     width: 90%;
     flex: none;
-    height: 15rem; /* Increased image size fix */
-    margin-top: 1.5rem;
+    height: 10rem; /* Increased image size fix */
+    margin-top: 1rem;
+  }
+
+   .panel-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    padding: 2rem 0.5rem; /* Reduced horizontal padding for arrow space */
+    min-height: auto;
+    box-shadow: none;
+    border: none;
+    gap: 0;
   }
 
   .panel-image img{
-    height: 17rem;
+    height: 12rem;
     width: 90%; /* Let the image fill its container */
+     object-fit: cover !important;
   }
 }
 

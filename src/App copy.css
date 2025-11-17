@@ -1,3 +1,256 @@
+/* :root {
+  --primary-red: #612d31;
+  --secondary-red: #c31d2a;
+  --text-white: #ffffff;
+  --text-light: #f0f0f0;
+  --bg-dark-overlay: rgba(0, 0, 0, 0.7);
+  --bg-light-blur: rgba(255, 255, 255, 0.1);
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #121212;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  background-image: url('./image/Landing Page background blue.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+} 
+
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 3rem;
+  color: var(--text-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.App-logo {
+  height: 5rem;
+  transition: transform 0.3s ease;
+}
+.App-logo:hover {
+  transform: scale(1.05);
+}
+
+.App nav ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.App nav ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.App nav ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--primary-red);
+  transition: width 0.3s ease;
+}
+
+.App nav ul li:hover {
+  color: #c31d2a;
+}
+
+.App nav ul li:hover::after {
+  width: 100%;
+} 
+
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+} 
+
+ 
+.spacer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 0 3rem;
+  color: var(--text-white);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.spacer p {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 200;
+  max-width: 75%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.logo2 {
+  height: 18rem;
+  width: auto;
+  margin-bottom: 2.2rem !important;
+} 
+
+
+.start-buttons {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--bg-light-blur);
+  border-radius: 12px;
+  color: var(--text-white);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.start-buttons h2 {
+  font-size: 1.75rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.choices button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: var(--primary-red);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.choices button:hover {
+  background-color: var(--secondary-red);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.scroll-indicator {
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 300;
+  animation: bounce 1.5s infinite;
+  color: var(--text-light);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.back-button-wrapper {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+} 
+
+
+.back-button {
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.back-button:hover {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  transform: scale(1.05);
+} 
+
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+} 
+
+.screen {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 0rem;
+  box-sizing: border-box;
+  position: relative;
+}  */
+
 :root {
   --primary-red: #612d31;
   --secondary-red: #c31d2a;
@@ -17,9 +270,21 @@ body {
 }
 
 body {
+  /* overflow-y: auto; */
+  /* but locked to 'hidden' when menu is open */
+}
+
+body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
+  /* background-image: url('./image/Landing Page background blue.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center; */
+  /* overflow: hidden; */
+  /* overflow-x: hidden; */
   background-color: black;
 }
 
@@ -36,26 +301,20 @@ body {
 
 /* --- Banner (Navigation) --- */
 .banner {
-  /* 🚩 FIXED: Set to absolute positioning relative to .spacer */
-  position: fixed; 
-  top: 0;
-  left: 0;
-  right: 0;
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Reduced padding slightly for smaller screens to save space */
+  padding: 1rem 2rem;
   color: var(--text-white);
-  /* z-index must be high */
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  /* Added background/backdrop for visibility over main hero content */
-  background: rgba(0, 0, 0, 0.4); 
-  backdrop-filter: blur(5px);
 }
 
 .App-logo {
   /* Base size */
-  height: 3rem;
+  height: 4rem;
   transition: transform 0.3s ease;
 }
 
@@ -78,7 +337,7 @@ body {
 .App nav ul li {
   cursor: pointer;
   position: relative;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0;
   transition: color 0.3s ease;
   /* Ensure text doesn't wrap oddly */
   white-space: nowrap;
@@ -113,9 +372,6 @@ body {
   flex-grow: 1;
   /* Base padding */
   padding: 0 3rem;
-  /* 🚩 FIXED: Add padding to make space for the absolute-positioned banner */
-  padding-top: 6rem; /* Adjust based on banner height (~4rem) + padding (~1rem) */
-
   color: var(--text-white);
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -317,7 +573,9 @@ body {
 }
 
 /* 🍔 Burger Animation (The X button) */
+/* 🍔 Burger Animation (The X button) */
 .burger-menu-button.open .burger-icon-line:nth-child(1) {
+  /* FIX: Reset to 9px translation and 45 degrees rotation */
   transform: translateY(11px) rotate(45deg);
 }
 
@@ -326,6 +584,7 @@ body {
 }
 
 .burger-menu-button.open .burger-icon-line:nth-child(3) {
+  /* FIX: Reset to -9px translation and -45 degrees rotation */
   transform: translateY(-11px) rotate(-45deg);
 }
 
@@ -442,8 +701,6 @@ body {
   .spacer {
     min-height: 100vh;
     min-height: 100dvh;
-    /* Re-adjust spacer padding for smaller banner */
-    padding-top: 5rem; 
   }
 
   .panels-screen {
@@ -457,7 +714,7 @@ body {
 }
 
 .back-button-wrapper {
-  /* border: solid red; */
+  border: solid red;
     position: static; 
     margin: 0rem auto 1rem auto; /* Add vertical spacing and center it */
     /* padding: 0 0 2rem 0; */
@@ -483,7 +740,7 @@ body {
   }
 
   .App-logo {
-    height:2rem;
+    height: 3.5rem;
   }
 
   .App nav ul {
@@ -495,8 +752,6 @@ body {
 
   .spacer {
     padding: 0 1rem;
-    /* Re-adjust spacer padding for smaller banner */
-    padding-top: 4.5rem; 
   }
 
   .spacer p {
@@ -506,10 +761,8 @@ body {
   }
 
   .logo2 {
-    height: 6rem;
+    height: 8rem;
     margin-bottom: 1.5rem !important;
-    border: solid red;
-    width: auto;
   }
 
   .start-buttons {
@@ -565,11 +818,14 @@ body {
   }
 
   .banner {
-    /* Set background on banner for mobile to ensure readability */
+    /* Hide the navigation links completely to save space */
     justify-content: space-between;
     padding: 0.75rem 1.2rem;
     align-items: center;
     z-index: 1005;
+    
+    /* background: #cccccc6c; 
+    backdrop-filter: blur(15px);    */
   }
 
   .banner nav {
@@ -586,11 +842,6 @@ body {
   .App-logo {
     height: 2.5rem;
     width: auto;
-  }
-
-  .spacer {
-    /* Re-adjust spacer padding for smaller banner */
-    padding-top: 4rem; 
   }
 
   .spacer p {
@@ -658,6 +909,8 @@ body {
     /* Set background on banner for mobile to ensure readability */
     justify-content: space-between;
     padding: 0.2rem 0.8rem;
+    /* background: #cccccc6c; 
+    backdrop-filter: blur(15px);    */
   }
 
   .scroll-container {
@@ -675,6 +928,11 @@ body {
     scroll-snap-align: start;
     /* scroll-margin-top: 6rem; */
   }
+
+  /* .cladding-screen,
+  .fasteners-screen{
+    justify-content: center;
+  } */
 }
 
 @media (max-width: 400px) {
@@ -690,3 +948,16 @@ body {
   }
 
 }
+
+
+/* 
+
+Main image - too big
+
+Cutting overflow
+
+Cladding card is too big
+
+Panels and fasteners card smaller
+
+*/

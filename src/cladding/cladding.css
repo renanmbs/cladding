@@ -181,13 +181,29 @@ max-height: 20rem !important;
 @media (max-width: 820px){
   .cladding-card {
     /* Allow cards to be slightly smaller to fit 2 across more comfortably on 14" screen */
-    max-width: 40%;
-    height: 15rem;
+    border: solid red;
+    padding: 0.5rem !important;
   }
+
+  .cladding-card h3{
+ font-size: 1rem;
+}
 
    .cladding-card p{
  font-size: 0.8rem;
 }
+
+
+  .cladding-card img {
+    max-height: 6rem; 
+    margin-bottom: 0rem;
+  }
+
+   .cladding-cards {
+    gap: 1rem; /* Reduce gap slightly */
+    padding-bottom: 0rem;
+    border: solid red;
+  }
 
 }
 
