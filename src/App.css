@@ -411,12 +411,13 @@ body {
 /* --- 💻 Small Laptops & Large Tablets (Max 1200px) --- */
 @media (max-width: 1200px) {
   .banner {
-    padding: 0.6rem 1.5rem;
+    padding: 0rem 0.5rem;
   }
 
   .App-logo {
-    height: 4rem;
+    height: 3rem;
     /* Slightly smaller logo */
+    border: solid pink; 
   }
 
   .App nav ul {
