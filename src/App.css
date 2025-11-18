@@ -677,7 +677,7 @@ body {
 
   .screen{
     justify-content: flex-start;
-    scroll-snap-align: start;
+    scroll-snap-align: none;
     /* scroll-margin-top: 6rem; */
   }
 }
